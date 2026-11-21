@@ -433,20 +433,25 @@ button:hover .arrow { transform: translateX(4px); }
 }
 .post {
   display: flex;
-  align-items: center;
-  min-height: 160px;
-  padding: 32px;
+  flex-direction: column;
   background: var(--white);
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.4;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.post span {
+.post__media {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  background: var(--tint);
+}
+.post__media img { object-fit: cover; }
+.post__title {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  padding: 24px 24px 32px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
 }
 .post:hover {
   transform: translateY(-4px);

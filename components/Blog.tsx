@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ArticleSummary } from "@/lib/data";
 import { routes } from "@/lib/site";
 
-/** Homepage teaser: title-only cards, as on the original. */
+/** Homepage teaser: photo + title cards. */
 export function Blog({ posts }: { posts: ArticleSummary[] }) {
   return (
     <section className="blog">
@@ -16,7 +17,17 @@ export function Blog({ posts }: { posts: ArticleSummary[] }) {
         <div className="blog__grid">
           {posts.map((post) => (
             <Link href={`${routes.resources}/${post.slug}`} className="post" key={post.slug}>
-              <span>{post.title}</span>
+              <div className="post__media">
+                {post.image && (
+                  <Image
+                    src={post.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 600px) 100vw, (max-width: 991px) 50vw, 360px"
+                  />
+                )}
+              </div>
+              <span className="post__title">{post.title}</span>
             </Link>
           ))}
         </div>
