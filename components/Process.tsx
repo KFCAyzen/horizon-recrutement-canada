@@ -1,5 +1,6 @@
-import { steps } from "@/lib/content";
-import { Arrow } from "./Arrow";
+import { home } from "@/lib/content";
+import { routes } from "@/lib/site";
+import { NumberedCards } from "./blocks/NumberedCards";
 
 export function Process() {
   return (
@@ -18,26 +19,14 @@ export function Process() {
           </p>
         </div>
 
-        <div className="process__grid">
-          {steps.map((step, i) => (
-            <article className="step" key={step.title}>
-              <div className="step__num">{String(i + 1).padStart(2, "0")}</div>
-              <h3>{step.title}</h3>
-              <p>{step.body}</p>
-            </article>
-          ))}
-
-          <article className="step step--cta">
-            <h3>So, are you ready to settle in Canada?</h3>
-            <p>
-              Get in touch with our team to discover job opportunities and benefit from our support
-              program.
-            </p>
-            <a href="#contact" className="text-link">
-              Get started <Arrow />
-            </a>
-          </article>
-        </div>
+        <NumberedCards
+          steps={home.steps}
+          ctaCard={{
+            title: "So, are you ready to settle in Canada?",
+            body: "Get in touch with our team to discover job opportunities and benefit from our support program.",
+            link: { label: "Get started", href: routes.contact },
+          }}
+        />
       </div>
     </section>
   );

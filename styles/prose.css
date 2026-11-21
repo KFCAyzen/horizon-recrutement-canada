@@ -1,0 +1,54 @@
+/* ==========================================================
+   Rich text from the CMS (articles, job sections, policies)
+   ========================================================== */
+.prose {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #3a3a44;
+}
+.prose > * + * { margin-top: 1.1em; }
+.prose h2 {
+  font-size: 30px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 2em;
+}
+.prose h3 {
+  font-size: 22px;
+  line-height: 1.35;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 1.8em;
+}
+.prose h4 { font-size: 18px; font-weight: 600; color: var(--ink); margin-top: 1.6em; }
+.prose > :first-child { margin-top: 0; }
+.prose ul,
+.prose ol { padding-left: 1.4em; }
+.prose ul { list-style: disc; }
+.prose ol { list-style: decimal; }
+.prose li + li { margin-top: 0.4em; }
+.prose li::marker { color: var(--primary); }
+.prose strong { color: var(--ink); font-weight: 600; }
+.prose a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose blockquote {
+  margin: 1.6em 0;
+  padding: 4px 0 4px 24px;
+  border-left: 3px solid var(--primary);
+  font-style: italic;
+}
+
+/* Compact variant for job sections */
+.prose--sm { font-size: 15px; line-height: 1.65; }
+.prose--sm h2 { font-size: 22px; }
+.prose--sm h3 { font-size: 18px; }
+
+@media (max-width: 600px) {
+  .prose { font-size: 16px; }
+  .prose h2 { font-size: 24px; }
+  .prose h3 { font-size: 19px; }
+}

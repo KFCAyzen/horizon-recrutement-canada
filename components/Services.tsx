@@ -1,9 +1,10 @@
-import { services } from "@/lib/content";
-import { Arrow } from "./Arrow";
+import { home } from "@/lib/content";
+import { routes } from "@/lib/site";
+import { ButtonLink } from "./ButtonLink";
 
 export function Services() {
   return (
-    <section className="services" id="services">
+    <section className="services">
       <div className="container">
         <p className="eyebrow">Business services</p>
         <h2 className="h2">Employers: Recruit and Support Your International Talent</h2>
@@ -11,18 +12,16 @@ export function Services() {
           Talentech supports you every step of the way, from sourcing talent internationally to
           handling the immigration procedures required for their hiring.
         </p>
-        <a href="#contact" className="btn btn--primary">
-          Talk to an expert <Arrow />
-        </a>
+        <ButtonLink href={routes.contact}>Talk to an expert</ButtonLink>
 
         <div className="services__cards">
-          {services.map((s) => (
+          {home.services.map((s) => (
             <article className="service-card" key={s.title}>
               <h3>{s.title}</h3>
               <p>{s.body}</p>
-              <a href="#" className="text-link">
-                Learn more <Arrow />
-              </a>
+              <ButtonLink href={s.href} variant="text">
+                Learn more
+              </ButtonLink>
             </article>
           ))}
         </div>

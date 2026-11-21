@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
+import { ActiveNav, Nav } from "@/components/Nav";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
+import "@/styles/blocks.css";
+import "@/styles/listing.css";
+import "@/styles/prose.css";
 
 export const metadata: Metadata = {
-  title: "Talentech | Design practice reproduction",
-  description:
-    "Practice reproduction of an immigration and international recruitment homepage.",
+  title: {
+    default: "Talentech | Your Partner in Immigration and International Recruitment",
+    template: "%s | Talentech",
+  },
+  description: "Practice reproduction of an immigration and international recruitment website.",
 };
 
 // The original site uses the system-ui font stack (see --font in globals.css),
@@ -12,7 +20,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {/* usePathname can suspend for params unknown at build time (e.g. 404 slugs). */}
+        <Suspense fallback={<Nav pathname={null} />}>
+          <ActiveNav />
+        </Suspense>
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

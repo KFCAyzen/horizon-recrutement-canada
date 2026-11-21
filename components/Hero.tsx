@@ -1,4 +1,5 @@
-import { Arrow } from "./Arrow";
+import { routes } from "@/lib/site";
+import { ButtonLink } from "./ButtonLink";
 
 export function Hero() {
   return (
@@ -10,12 +11,10 @@ export function Hero() {
           immigration process and helps Canadian companies hire qualified candidates from abroad.
         </p>
         <div className="hero__actions">
-          <a href="#" className="btn btn--primary">
-            Job Seeker | Find a Job <Arrow />
-          </a>
-          <a href="#services" className="btn btn--ghost">
-            Employers | Learn About Our Services <Arrow />
-          </a>
+          <ButtonLink href={routes.jobs}>Job Seeker | Find a Job</ButtonLink>
+          <ButtonLink href={routes.services} variant="ghost">
+            Employers | Learn About Our Services
+          </ButtonLink>
         </div>
       </div>
     </header>

@@ -1,8 +1,11 @@
-import { posts } from "@/lib/content";
+import Link from "next/link";
+import type { ArticleSummary } from "@/lib/data";
+import { routes } from "@/lib/site";
 
-export function Blog() {
+/** Homepage teaser: title-only cards, as on the original. */
+export function Blog({ posts }: { posts: ArticleSummary[] }) {
   return (
-    <section className="blog" id="blog">
+    <section className="blog">
       <div className="container">
         <p className="eyebrow">Blog and resources</p>
         <h2 className="h2">
@@ -11,10 +14,10 @@ export function Blog() {
           to better guide you
         </h2>
         <div className="blog__grid">
-          {posts.map((title) => (
-            <a href="#" className="post" key={title}>
-              <span>{title}</span>
-            </a>
+          {posts.map((post) => (
+            <Link href={`${routes.resources}/${post.slug}`} className="post" key={post.slug}>
+              <span>{post.title}</span>
+            </Link>
           ))}
         </div>
       </div>

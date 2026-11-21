@@ -1,9 +1,12 @@
-import { stats } from "@/lib/content";
-import { Arrow } from "./Arrow";
+import { home } from "@/lib/content";
+import { routes } from "@/lib/site";
+import { ButtonLink } from "./ButtonLink";
 
-export function About() {
+export function About({ openPositions }: { openPositions: number }) {
+  const stats = home.stats.map((s) => (s.label === "Open positions" ? { ...s, value: String(openPositions) } : s));
+
   return (
-    <section className="about" id="about">
+    <section className="about">
       <div className="container">
         <div className="about__grid">
           <div>
@@ -28,9 +31,9 @@ export function About() {
               </div>
             ))}
           </div>
-          <a href="#" className="text-link">
-            Learn more about us <Arrow />
-          </a>
+          <ButtonLink href={routes.about} variant="text">
+            Learn more about us
+          </ButtonLink>
         </div>
       </div>
     </section>

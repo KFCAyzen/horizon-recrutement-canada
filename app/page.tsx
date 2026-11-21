@@ -1,25 +1,20 @@
-import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { Partners } from "@/components/Partners";
 import { About } from "@/components/About";
 import { Process } from "@/components/Process";
 import { Services } from "@/components/Services";
 import { Blog } from "@/components/Blog";
-import { Footer } from "@/components/Footer";
+import { articles, clients, jobs, toArticleSummary } from "@/lib/data";
 
 export default function Home() {
   return (
     <>
-      <Nav />
-      <main>
-        <Hero />
-        <Partners />
-        <About />
-        <Process />
-        <Services />
-        <Blog />
-      </main>
-      <Footer />
+      <Hero />
+      <Partners clients={clients.map(({ slug, name, logo }) => ({ slug, name, logo }))} />
+      <About openPositions={jobs.length} />
+      <Process />
+      <Services />
+      <Blog posts={articles.slice(0, 3).map(toArticleSummary)} />
     </>
   );
 }

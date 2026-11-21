@@ -1,10 +1,12 @@
-import { footerColumns } from "@/lib/content";
-import { Arrow } from "./Arrow";
+import Link from "next/link";
+import { Fragment } from "react";
+import { contact, footerColumns, routes } from "@/lib/site";
+import { ButtonLink } from "./ButtonLink";
 
 export function Footer() {
   return (
     <>
-      <footer className="footer" id="contact">
+      <footer className="footer">
         <div className="container">
           <div className="footer__grid">
             <div>
@@ -15,17 +17,20 @@ export function Footer() {
               </p>
               <p className="footer__sub">Let&apos;s begin the next stage of your life!</p>
               <div className="footer__contact">
-                <p>1 (514) 657-8007</p>
-                <p>contact@talentech.ca</p>
+                <p>
+                  <a href={contact.phoneHref}>{contact.phone}</a>
+                </p>
+                <p>
+                  <a href={`mailto:${contact.email}`}>{contact.email}</a>
+                </p>
                 <hr />
                 <p className="footer__address">
-                  1395 Fleury Street East
-                  <br />
-                  Suite 60.2 – P.O. Box 11
-                  <br />
-                  Montreal, QC H2C 1R7
-                  <br />
-                  Canada
+                  {contact.address.map((line, i) => (
+                    <Fragment key={line}>
+                      {i > 0 && <br />}
+                      {line}
+                    </Fragment>
+                  ))}
                 </p>
               </div>
             </div>
@@ -36,7 +41,7 @@ export function Footer() {
                 <ul>
                   {col.links.map((l) => (
                     <li key={l.label}>
-                      <a href={l.href}>{l.label}</a>
+                      <Link href={l.href}>{l.label}</Link>
                     </li>
                   ))}
                 </ul>
@@ -45,9 +50,9 @@ export function Footer() {
           </div>
 
           <div className="footer__find">
-            <a href="#" className="text-link">
-              Find a job <Arrow />
-            </a>
+            <ButtonLink href={routes.jobs} variant="text">
+              Find a job
+            </ButtonLink>
           </div>
         </div>
       </footer>
