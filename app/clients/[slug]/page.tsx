@@ -43,7 +43,7 @@ async function ClientBody({ params }: Pick<PageProps<"/clients/[slug]">, "params
       <Section>
         <div className="client-header">
           <div className="client-header__logo">
-            {client.logo && <Image src={client.logo} alt={client.name} fill preload sizes="160px" />}
+            {client.logo && <Image src={client.logo} alt={client.name} fill loading="eager" sizes="160px" />}
           </div>
           <div>
             <p className="eyebrow">Canadian employer</p>

@@ -52,7 +52,7 @@ async function ArticleBody({ params }: Pick<PageProps<"/resources/[slug]">, "par
           <h1>{article.title}</h1>
           {article.image && (
             <div className="article__cover">
-              <Image src={article.image} alt="" fill preload sizes="(max-width: 860px) 100vw, 800px" />
+              <Image src={article.image} alt="" fill loading="eager" fetchPriority="high" sizes="(max-width: 860px) 100vw, 800px" />
             </div>
           )}
           <Prose html={article.html} />

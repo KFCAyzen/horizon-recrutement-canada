@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ImageSrc } from "@/lib/content";
 import { Arrow } from "../Arrow";
 import { ButtonLink } from "../ButtonLink";
 import type { Tone } from "./Section";
@@ -11,7 +12,7 @@ type Props = {
   cta?: { label: string; href: string };
   tone?: Tone;
   /** Right column: a photo… */
-  image?: { src: string; alt: string };
+  image?: { src: ImageSrc; alt: string };
   /** …or a list of links (Services overview). */
   links?: { heading: string; items: { label: string; href: string }[] };
 };
@@ -32,7 +33,15 @@ export function PageHeader({ eyebrow, title, lead, cta, tone = "tint", image, li
 
           {image && (
             <div className="page-header__media">
-              <Image src={image.src} alt={image.alt} fill preload sizes="(max-width: 991px) 100vw, 40vw" />
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                loading="eager"
+                fetchPriority="high"
+                placeholder={typeof image.src === "string" ? "empty" : "blur"}
+                sizes="(max-width: 991px) calc(100vw - 64px), 520px"
+              />
             </div>
           )}
 

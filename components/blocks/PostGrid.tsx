@@ -14,7 +14,7 @@ export function PostCard({ post }: { post: PostSummary }) {
     <Link href={`${routes.resources}/${post.slug}`} className="post-card">
       <div className="post-card__media">
         {post.image && (
-          <Image src={post.image} alt="" fill sizes="(max-width: 600px) 100vw, (max-width: 991px) 50vw, 33vw" />
+          <Image src={post.image} alt="" fill sizes="(max-width: 600px) 100vw, (max-width: 991px) 50vw, 360px" />
         )}
       </div>
       <div className="post-card__body">

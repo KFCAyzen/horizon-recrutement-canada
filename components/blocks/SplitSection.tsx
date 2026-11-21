@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ImageSrc } from "@/lib/content";
 import { ButtonLink } from "../ButtonLink";
 import { Section, type Tone } from "./Section";
 
@@ -9,7 +10,7 @@ type Props = {
   title: string;
   body: string;
   cta?: { label: string; href: string };
-  image: string;
+  image: ImageSrc;
   alt: string;
   reverse?: boolean;
   tone?: Tone;
@@ -36,7 +37,13 @@ export function SplitSection({
           {cta && <ButtonLink href={cta.href}>{cta.label}</ButtonLink>}
         </div>
         <div className="split__media">
-          <Image src={image} alt={alt} fill sizes="(max-width: 991px) 100vw, 50vw" />
+          <Image
+            src={image}
+            alt={alt}
+            fill
+            placeholder={typeof image === "string" ? "empty" : "blur"}
+            sizes="(max-width: 991px) calc(100vw - 64px), 600px"
+          />
         </div>
       </div>
     </Section>

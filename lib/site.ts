@@ -11,6 +11,7 @@ export const routes = {
   jobs: "/jobs",
   siteMap: "/site-map",
   policies: "/policies",
+  credits: "/credits",
 } as const;
 
 export const serviceLinks = [
@@ -48,6 +49,7 @@ export const footerColumns = [
     links: [
       { label: "Policies", href: routes.policies },
       { label: "Privacy & Preferences Centre", href: routes.policies },
+      { label: "Photo credits", href: routes.credits },
     ],
   },
 ];

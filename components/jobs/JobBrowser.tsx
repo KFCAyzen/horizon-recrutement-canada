@@ -45,6 +45,7 @@ export function JobBrowser({ jobs, showCompany = true }: { jobs: JobSummary[]; s
       />
 
       <div>
+        <h2 className="sr-only">Open positions</h2>
         <p className="results__count" aria-live="polite">
           {filtered.length} {filtered.length === 1 ? "position" : "positions"}
         </p>

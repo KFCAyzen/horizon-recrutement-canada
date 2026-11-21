@@ -37,7 +37,7 @@ export function Footer() {
 
             {footerColumns.map((col) => (
               <div key={col.heading}>
-                <h4>{col.heading}</h4>
+                <h2 className="footer__heading">{col.heading}</h2>
                 <ul>
                   {col.links.map((l) => (
                     <li key={l.label}>

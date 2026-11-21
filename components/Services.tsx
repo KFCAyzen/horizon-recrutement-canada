@@ -20,7 +20,7 @@ export function Services() {
               <h3>{s.title}</h3>
               <p>{s.body}</p>
               <ButtonLink href={s.href} variant="text">
-                Learn more
+                Learn more<span className="sr-only"> about {s.title}</span>
               </ButtonLink>
             </article>
           ))}

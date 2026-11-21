@@ -32,6 +32,7 @@ export function ResourceBrowser({ articles, categories }: { articles: ArticleSum
       />
 
       <div>
+        <h2 className="sr-only">Publications</h2>
         <p className="results__count" aria-live="polite">
           {filtered.length} {filtered.length === 1 ? "publication" : "publications"}
         </p>

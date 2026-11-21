@@ -1,13 +1,25 @@
 // Page copy, kept out of components so they stay presentational.
+import type { StaticImageData } from "next/image";
 import { routes } from "./site";
 
-const CDN = "https://cdn.prod.website-files.com/627ab2c5441e5182a66d7ee4";
+// Static imports: next/image gets intrinsic sizes, AVIF/WebP variants and a blur placeholder.
+// Sources: Magnific stock (see /credits); resized by scripts/optimize-images.mjs.
+import heroMontreal from "@/assets/images/hero-montreal.jpg";
+import headerRecruitment from "@/assets/images/header-recruitment.jpg";
+import headerImmigration from "@/assets/images/header-immigration.jpg";
+import servicesRecruitment from "@/assets/images/services-recruitment.jpg";
+import servicesImmigration from "@/assets/images/services-immigration.jpg";
+import aboutApproach from "@/assets/images/about-approach.jpg";
+
+export type ImageSrc = StaticImageData | string;
+
 export const images = {
-  hero: `${CDN}/627ab2c5441e510aac6d7f4a_andrew-welch-kwXby58kRSo-unsplash.jpg`,
-  engineer: `${CDN}/627ab2c5441e5184176d7f55_thisisengineering-raeng-DKPh3G8HLRU-unsplash%20(1).jpg`,
-  headset: `${CDN}/674f698ada9c39d29eb521cc_woman-with-headset-laptop-working-from-home%20(1).jpg`,
-  consultant: `${CDN}/64f64b5e54e53ad531178167_633dd00990e5e22aec7ead8a_team-talentech-vincent.png`,
-  pitch: `${CDN}/64f64e2eba3db4524c417ba7_1163_Talentech_Pitch.jpg`,
+  hero: heroMontreal,
+  headerRecruitment,
+  headerImmigration,
+  servicesRecruitment,
+  servicesImmigration,
+  aboutApproach,
 };
 
 export type Step = { title: string; body: string | string[] };
@@ -47,16 +59,16 @@ export const servicesPage = {
       title: "Fill your key positions with top talent",
       body: "Recruiting key talent is one of the most important success factors. Don't limit yourself to your own geographic region! Our permanent recruitment service gives you access to an unrivalled pool of international talent.",
       cta: { label: "Let's discuss your needs", href: routes.recruitment },
-      image: images.engineer,
-      alt: "Engineer standing in an electronics lab",
+      image: images.servicesRecruitment,
+      alt: "Recruiter shaking hands with a job candidate in a bright office",
     },
     {
       kicker: "Immigration",
       title: "Accompany your international candidates in their immigration procedures",
       body: "Have you found the perfect candidate and would like to support him or her through the immigration process? Let us explain how our team can support you.",
       cta: { label: "Contact an expert", href: routes.immigration },
-      image: images.headset,
-      alt: "Consultant with a headset talking on a video call",
+      image: images.servicesImmigration,
+      alt: "Passport being handed over a desk of travel and visa documents",
     },
   ],
   cta: "Your immigration or international recruitment project starts here!",
@@ -69,8 +81,8 @@ export const recruitmentPage = {
     title: "International Recruitment",
     lead: "Our international recruitment agency specializes in sourcing and selecting exceptional talent from around the world to meet your company's unique needs. With our strategic approach and global relationships, we facilitate the acquisition of highly qualified professionals who will contribute to your company's continued growth and innovation.",
     cta: { label: "Get a quote", href: routes.contact },
-    image: images.engineer,
-    alt: "Engineer standing in an electronics lab",
+    image: images.headerRecruitment,
+    alt: "Smiling technician in a hard hat holding a tablet on a factory floor",
   },
   process: {
     eyebrow: "Our international recruitment process",
@@ -107,8 +119,8 @@ export const immigrationPage = {
     title: "Canadian Immigration Consulting Services",
     lead: "Personalized support for workers and businesses, from analyzing your situation to preparing and following up on your immigration procedures.",
     cta: { label: "Book a consultation", href: routes.contact },
-    image: images.consultant,
-    alt: "Talentech immigration consultant",
+    image: images.headerImmigration,
+    alt: "Consultant reviewing paperwork with a client",
   },
   services: {
     eyebrow: "Our services",
@@ -189,8 +201,8 @@ export const aboutPage = {
     kicker: "Our approach",
     title: "We understand that each company is unique, and that each position requires specific skills and qualities.",
     body: "That's why we take a personalized approach to every recruitment assignment. We work closely with our customers to understand their needs, corporate culture and long-term aspirations, in order to find the ideal candidate.",
-    image: images.pitch,
-    alt: "Talentech founders presenting on stage",
+    image: images.aboutApproach,
+    alt: "Diverse leadership team meeting in a modern office",
   },
   commitment: {
     eyebrow: "Our commitment",

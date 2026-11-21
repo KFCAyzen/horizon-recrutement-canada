@@ -2,14 +2,14 @@
    Design tokens (measured from the live site)
    ========================================================== */
 :root {
-  --primary: #3035ba;
-  --primary-dark: #252a96;
+  --primary: #c81e7d;
+  --primary-dark: #9e1563;
   --ink: #1c1c1c;
-  --ink-muted: #6b6b76;
-  --tint: #e9eaf2;
-  --tint-soft: #f6f6fb;
+  --ink-muted: #6e6470;
+  --tint: #f7edf3;
+  --tint-soft: #fcf7fa;
   --white: #ffffff;
-  --line: #d9dae6;
+  --line: #eadce5;
   --dark: #1c1c1c;
 
   --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -227,14 +227,25 @@ button:hover .arrow { transform: translateX(4px); }
    Hero
    ========================================================== */
 .hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   padding: 96px 0;
   color: var(--white);
-  background:
-    linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 71%),
-    url("https://cdn.prod.website-files.com/627ab2c5441e5182a66d7ee4/627ab2c5441e510aac6d7f4a_andrew-welch-kwXby58kRSo-unsplash.jpg")
-      center / cover no-repeat,
-    #2a2f45;
+  background: #241a2a;
 }
+.hero__img { object-fit: cover; object-position: center 60%; z-index: -2; }
+/* Readability scrim: dark on the text side, with a hint of brand magenta. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(to right, rgba(18, 8, 20, 0.85), rgba(18, 8, 20, 0.35) 55%, rgba(18, 8, 20, 0) 80%),
+    linear-gradient(to top, rgba(200, 30, 125, 0.25), rgba(200, 30, 125, 0) 45%);
+}
+.hero__content { position: relative; }
 .hero h1 {
   font-size: 56px;
   line-height: 1.2;
@@ -270,7 +281,7 @@ button:hover .arrow { transform: translateX(4px); }
   height: 24px;
   background: none;
   border: 0;
-  color: #b9bac8;
+  color: #cdb9c5;
   cursor: pointer;
   padding: 0;
 }
@@ -360,7 +371,7 @@ button:hover .arrow { transform: translateX(4px); }
   top: 50%;
   right: -49px;
   width: 48px;
-  border-top: 1px dashed #9a9cb3;
+  border-top: 1px dashed #c9a3b9;
 }
 .steps--4 .step:not(:nth-child(4n))::after { right: -33px; width: 32px; }
 .step:has(+ .step--cta)::after { display: none; }
@@ -457,12 +468,28 @@ button:hover .arrow { transform: translateX(4px); }
 .footer__contact { font-size: 14px; line-height: 21px; }
 .footer__contact hr {
   border: 0;
-  border-top: 1px solid #c4c6d6;
+  border-top: 1px solid #dfccd7;
   width: 260px;
   margin: 16px 0;
 }
 .footer__address { font-weight: 600; }
-.footer h4 { font-size: 16px; font-weight: 600; margin-bottom: 24px; }
+/* 24px+ touch targets for the tel/mailto links */
+.footer__contact a { display: inline-block; padding: 3px 0; }
+.footer__contact a:hover { color: var(--primary); }
+
+/* Text for screen readers / link context only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.footer__heading { font-size: 16px; font-weight: 600; margin-bottom: 24px; }
 .footer li { font-size: 14px; margin-bottom: 12px; }
 .footer li a:hover { color: var(--primary); }
 .footer__find {
@@ -548,3 +575,6 @@ button:hover .arrow { transform: translateX(4px); }
   .steps, .steps--4, .blog__grid { grid-template-columns: 1fr; }
   .btn { width: 100%; justify-content: space-between; }
 }
+
+/* Brand selection colour */
+::selection { background: var(--primary); color: var(--white); }

@@ -96,7 +96,7 @@ legend.filters__label { padding: 0; }
 .job-meta span + span::before {
   content: "•";
   margin: 0 10px;
-  color: #b9bac8;
+  color: #cdb9c5;
 }
 .job-card .text-link { margin-top: 16px; font-size: 15px; }
 

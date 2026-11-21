@@ -4,7 +4,7 @@
     "title": "Electrical Engineer",
     "company": "PCI Automation",
     "clientSlug": "pci-automatisation-partenaire",
-    "logo": "https://cdn.prod.website-files.com/627ab2c5441e51619a6d7ef6/62b9b8da005ca7cf79910c3d_pci-automatisation-logo-partner.png",
+    "logo": "/images/clients/pci-automatisation-partenaire.webp",
     "city": "Montreal",
     "sectors": [],
     "type": "Permanent",
@@ -358,7 +358,7 @@
     "title": "Service crane technician",
     "company": "Fives Services",
     "clientSlug": "fives-services",
-    "logo": "https://cdn.prod.website-files.com/627ab2c5441e51619a6d7ef6/65faf54f239aa43b0de1be64_fives_services_ontario_logo.jpeg",
+    "logo": "/images/clients/fives-services.webp",
     "city": "Bolton",
     "sectors": [],
     "type": "Permanent",
@@ -398,7 +398,7 @@
     "title": "Driver class 1",
     "company": "Transport Laplante & Fils",
     "clientSlug": "transport-laplante-fils",
-    "logo": "https://cdn.prod.website-files.com/627ab2c5441e51619a6d7ef6/65c4f5189fab03b815a19313_weblogo.jpg",
+    "logo": "/images/clients/transport-laplante-fils.webp",
     "city": "Plaisance",
     "sectors": [],
     "type": "Permanent",
@@ -438,7 +438,7 @@
     "title": "Building Control Technician",
     "company": "AEC Autoénergie Canada",
     "clientSlug": "aec-autoenergie-canada",
-    "logo": "https://cdn.prod.website-files.com/627ab2c5441e51619a6d7ef6/65c4f0b09b9c0ed63f9e2baf_logo.png",
+    "logo": "/images/clients/aec-autoenergie-canada.webp",
     "city": "Blainville",
     "sectors": [
       "Building",
@@ -663,7 +663,7 @@
     "title": "Programmer - Robotics integrator",
     "company": "Matiss",
     "clientSlug": "matiss-quebec",
-    "logo": "https://cdn.prod.website-files.com/627ab2c5441e51619a6d7ef6/6363e31f9134f49760989d1b_matiss-logo-talentech.png",
+    "logo": "/images/clients/matiss-quebec.webp",
     "city": "Saint-Georges",
     "sectors": [
       "Industry",
@@ -714,7 +714,7 @@
     "title": "Project Manager - Automation",
     "company": "Systemex Automation",
     "clientSlug": "systemex-automation",
-    "logo": "https://cdn.prod.website-files.com/627ab2c5441e51619a6d7ef6/654a68ff51762dac0134dbdb_logo_systemex.svg",
+    "logo": "/images/clients/systemex-automation.webp",
     "city": "Laval",
     "sectors": [
       "Industry",
@@ -761,7 +761,7 @@
     "title": "HMI/SCADA Specialist",
     "company": "Solumation",
     "clientSlug": "solumation",
-    "logo": "https://cdn.prod.website-files.com/627ab2c5441e51619a6d7ef6/6536719bf65a34359b7f2e01_solumation.webp",
+    "logo": "/images/clients/solumation.webp",
     "city": "Terrebonne",
     "sectors": [
       "Industry",
@@ -821,7 +821,7 @@
     "title": "Electrician",
     "company": "Bruneau electric",
     "clientSlug": "bruneau-electrique",
-    "logo": "https://cdn.prod.website-files.com/627ab2c5441e51619a6d7ef6/6723be5c9dc57458f75b61d4_Bruneau-%C3%A9lectrique-logo.png",
+    "logo": "/images/clients/bruneau-electrique.webp",
     "city": "Montreal",
     "sectors": [
       "Construction"
@@ -837,7 +837,7 @@
     "title": "Service Technician",
     "company": "Fives Services",
     "clientSlug": "fives-services",
-    "logo": "https://cdn.prod.website-files.com/627ab2c5441e51619a6d7ef6/65faf54f239aa43b0de1be64_fives_services_ontario_logo.jpeg",
+    "logo": "/images/clients/fives-services.webp",
     "city": "Quebec",
     "sectors": [
       "Industry"
@@ -879,7 +879,7 @@
     "title": "Automation and robotics engineer",
     "company": "Matiss",
     "clientSlug": "matiss-quebec",
-    "logo": "https://cdn.prod.website-files.com/627ab2c5441e51619a6d7ef6/6363e31f9134f49760989d1b_matiss-logo-talentech.png",
+    "logo": "/images/clients/matiss-quebec.webp",
     "city": "Saint-Georges",
     "sectors": [
       "Industry"
@@ -995,7 +995,7 @@
     "title": "Project manager for HVAC automation",
     "company": "Soteck inc.",
     "clientSlug": "soteck-inc",
-    "logo": "https://cdn.prod.website-files.com/627ab2c5441e51619a6d7ef6/64b81b835fc9c06038f19d22_Logo%20Soteck-clauger%20sup%20noir%204.0.jpg",
+    "logo": "/images/clients/soteck-inc.webp",
     "city": "Victoriaville",
     "sectors": [
       "Building",
@@ -1046,7 +1046,7 @@
     "title": "Automatician",
     "company": "Kopers",
     "clientSlug": "kopers",
-    "logo": "https://cdn.prod.website-files.com/627ab2c5441e51619a6d7ef6/63e55bdda0d31fbd6a5d707b_kopers-logo-talentech.png",
+    "logo": "/images/clients/kopers.webp",
     "city": "Victoriaville",
     "sectors": [
       "Industry",
@@ -1097,7 +1097,7 @@
     "title": "Automatician HVAC",
     "company": "ACCS",
     "clientSlug": "accs-quebec",
-    "logo": "https://cdn.prod.website-files.com/627ab2c5441e51619a6d7ef6/6363defc21877780586f16cc_accs-logo-talentech.png",
+    "logo": "/images/clients/accs-quebec.webp",
     "city": "Terrebonne",
     "sectors": [
       "Building",
@@ -1148,7 +1148,7 @@
     "title": "Commissioning Technician",
     "company": "ACCS",
     "clientSlug": "accs-quebec",
-    "logo": "https://cdn.prod.website-files.com/627ab2c5441e51619a6d7ef6/6363defc21877780586f16cc_accs-logo-talentech.png",
+    "logo": "/images/clients/accs-quebec.webp",
     "city": "Terrebonne",
     "sectors": [
       "Building",
@@ -1267,7 +1267,7 @@
     "title": "Specialist in automation and industrial computing",
     "company": "Frontmatec",
     "clientSlug": "frontmatec-quebec",
-    "logo": "https://cdn.prod.website-files.com/627ab2c5441e51619a6d7ef6/62b9b19eaf5a4c7f19ea01ab_frontmatec-logo-partner.png",
+    "logo": "/images/clients/frontmatec-quebec.webp",
     "city": "Saint-Anselme",
     "sectors": [
       "Industry",
@@ -1319,7 +1319,7 @@
     "title": "Software developer in digital vision - R&D",
     "company": "Frontmatec",
     "clientSlug": "frontmatec-quebec",
-    "logo": "https://cdn.prod.website-files.com/627ab2c5441e51619a6d7ef6/62b9b19eaf5a4c7f19ea01ab_frontmatec-logo-partner.png",
+    "logo": "/images/clients/frontmatec-quebec.webp",
     "city": "Saint-Anselme",
     "sectors": [
       "Industry",
