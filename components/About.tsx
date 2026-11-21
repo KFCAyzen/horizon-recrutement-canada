@@ -1,24 +1,24 @@
-import { home } from "@/lib/content";
+import { buildContent } from "@/lib/content";
+import { getMessages } from "@/lib/i18n/server";
 import { routes } from "@/lib/site";
 import { ButtonLink } from "./ButtonLink";
 
-export function About({ openPositions }: { openPositions: number }) {
-  const stats = home.stats.map((s) => (s.label === "Open positions" ? { ...s, value: String(openPositions) } : s));
+export async function About({ openPositions }: { openPositions: number }) {
+  const m = await getMessages();
+  const t = m.home.about;
+  const stats = buildContent(m).home.stats.map((s) => (s.key === "positions" ? { ...s, value: String(openPositions) } : s));
 
   return (
     <section className="about">
       <div className="container">
         <div className="about__grid">
           <div>
-            <p className="eyebrow">Who we are</p>
-            <h2 className="h2">We help international talent settle in Canada</h2>
+            <p className="eyebrow">{t.eyebrow}</p>
+            <h2 className="h2">{t.title}</h2>
           </div>
           <div className="about__right">
-            <h3 className="h3">Find a job with one of our Canadian customers</h3>
-            <p className="muted">
-              Are you looking for a stimulating job that matches your skills? Let our team introduce
-              you to our network of partner companies in various sectors across Canada.
-            </p>
+            <h3 className="h3">{t.subtitle}</h3>
+            <p className="muted">{t.body}</p>
           </div>
         </div>
 
@@ -32,7 +32,7 @@ export function About({ openPositions }: { openPositions: number }) {
             ))}
           </div>
           <ButtonLink href={routes.about} variant="text">
-            Learn more about us
+            {t.cta}
           </ButtonLink>
         </div>
       </div>

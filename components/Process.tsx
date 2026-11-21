@@ -1,30 +1,31 @@
-import { home } from "@/lib/content";
+import { buildContent } from "@/lib/content";
+import { getMessages } from "@/lib/i18n/server";
 import { routes } from "@/lib/site";
 import { NumberedCards } from "./blocks/NumberedCards";
 
-export function Process() {
+export async function Process() {
+  const m = await getMessages();
+  const t = m.home.process;
+  const { home } = buildContent(m);
   return (
     <section className="process">
       <div className="container">
         <div className="process__intro">
-          <p className="eyebrow">Our international recruitment process</p>
+          <p className="eyebrow">{t.eyebrow}</p>
           <h2 className="h2">
-            Full support,
+            {t.titleLine1}
             <br />
-            from interviews to your arrival.
+            {t.titleLine2}
           </h2>
-          <p className="lead">
-            More than just recruitment, we support international talents like you, with a free,
-            turnkey recruitment and relocation solution!
-          </p>
+          <p className="lead">{t.lead}</p>
         </div>
 
         <NumberedCards
           steps={home.steps}
           ctaCard={{
-            title: "So, are you ready to settle in Canada?",
-            body: "Get in touch with our team to discover job opportunities and benefit from our support program.",
-            link: { label: "Get started", href: routes.contact },
+            title: t.cta.title,
+            body: t.cta.body,
+            link: { label: t.cta.link, href: routes.contact },
           }}
         />
       </div>

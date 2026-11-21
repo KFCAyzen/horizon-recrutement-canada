@@ -1,6 +1,7 @@
 "use client";
 
 import { useId } from "react";
+import { useI18n } from "@/lib/i18n/client";
 
 type Group = {
   label: string;
@@ -23,12 +24,13 @@ export function FilterSidebar({
   groups: Group[];
   onReset: () => void;
 }) {
+  const t = useI18n().m.filters;
   const id = useId();
   const active = search !== "" || groups.some((g) => g.selected.length > 0);
 
   return (
-    <aside className="filters" aria-label="Filters">
-      <p className="filters__title">Filter items</p>
+    <aside className="filters" aria-label={t.aria}>
+      <p className="filters__title">{t.title}</p>
 
       <div className="filters__group">
         <label className="filters__label" htmlFor={`${id}-q`}>
@@ -37,7 +39,7 @@ export function FilterSidebar({
         <input
           id={`${id}-q`}
           type="search"
-          placeholder="Search here"
+          placeholder={t.searchPlaceholder}
           value={search}
           onChange={(e) => onSearch(e.target.value)}
         />
@@ -65,7 +67,7 @@ export function FilterSidebar({
 
       {active && (
         <button type="button" className="filters__reset" onClick={onReset}>
-          Clear all filters
+          {t.clear}
         </button>
       )}
     </aside>

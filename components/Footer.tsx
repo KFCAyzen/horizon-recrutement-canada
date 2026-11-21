@@ -1,9 +1,37 @@
-import Link from "next/link";
-import { brand, contact, footerColumns, routes } from "@/lib/site";
+import { brand, contact, routes } from "@/lib/site";
+import { getMessages } from "@/lib/i18n/server";
+import Link from "./Link";
 import { ButtonLink } from "./ButtonLink";
 import { Address, PhoneEmail } from "./ContactDetails";
 
-export function Footer() {
+export async function Footer() {
+  const m = await getMessages();
+  const t = m.footer;
+  const footerColumns = [
+    {
+      heading: t.navigation,
+      links: [
+        { label: m.nav.home, href: routes.home },
+        { label: t.aboutUs, href: routes.about },
+        { label: m.nav.resources, href: routes.resources },
+        { label: t.siteMap, href: routes.siteMap },
+      ],
+    },
+    {
+      heading: t.services,
+      links: [
+        { label: m.nav.recruitment, href: routes.recruitment },
+        { label: m.nav.immigrationShort, href: routes.immigration },
+      ],
+    },
+    {
+      heading: t.legal,
+      links: [
+        { label: t.policies, href: routes.policies },
+        { label: t.privacy, href: routes.policies },
+      ],
+    },
+  ];
   const hasPhoneOrEmail = Boolean(contact.phone || contact.email);
   const hasAddress = Boolean(contact.address?.length);
 
@@ -14,11 +42,11 @@ export function Footer() {
           <div className="footer__grid">
             <div>
               <p className="footer__tagline">
-                Your next chapter
+                {t.taglineLine1}
                 <br />
-                starts in Canada.
+                {t.taglineLine2}
               </p>
-              <p className="footer__sub">Let&apos;s build it together.</p>
+              <p className="footer__sub">{t.sub}</p>
               {(hasPhoneOrEmail || hasAddress) && (
                 <div className="footer__contact">
                   <PhoneEmail />
@@ -44,7 +72,7 @@ export function Footer() {
 
           <div className="footer__find">
             <ButtonLink href={routes.jobs} variant="text">
-              Find a job
+              {m.common.findJob}
             </ButtonLink>
           </div>
         </div>
@@ -53,7 +81,7 @@ export function Footer() {
       <div className="legal">
         <div className="container legal__inner">
           <div>
-            © 2026 {brand.name}. All rights reserved.
+            © 2026 {brand.name}. {t.rights}
           </div>
           <div>
             {contact.permits.map((permit) => (

@@ -1,11 +1,14 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { navLinks, routes } from "@/lib/site";
+import { routes } from "@/lib/site";
+import { LOCALE_COOKIE, localeNames, locales, localizePath, splitLocale } from "@/lib/i18n/config";
+import { useI18n } from "@/lib/i18n/client";
 import { Arrow } from "./Arrow";
+import Link from "./Link";
 
+/** `pathname` here is locale-free (e.g. "/jobs"). */
 const isActive = (pathname: string | null, href: string) =>
   pathname !== null && (href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/"));
 
@@ -15,7 +18,23 @@ export function ActiveNav() {
 }
 
 /** Pure nav markup; `pathname: null` renders without an active link (Suspense fallback). */
-export function Nav({ pathname }: { pathname: string | null }) {
+export function Nav({ pathname: fullPathname }: { pathname: string | null }) {
+  const { lang, m } = useI18n();
+  const t = m.nav;
+  const pathname = fullPathname === null ? null : splitLocale(fullPathname).path;
+  const serviceLinks = [
+    { label: t.recruitment, href: routes.recruitment },
+    { label: t.immigrationFull, href: routes.immigration },
+  ];
+  const navLinks = [
+    { label: t.home, href: routes.home },
+    { label: t.services, href: routes.services, children: serviceLinks },
+    { label: t.about, href: routes.about },
+    { label: t.resources, href: routes.resources },
+    { label: t.contact, href: routes.contact },
+  ];
+  const other = locales.find((l) => l !== lang) ?? lang;
+  const switchHref = localizePath(other, pathname ?? "/");
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const close = () => {
@@ -24,7 +43,7 @@ export function Nav({ pathname }: { pathname: string | null }) {
   };
 
   return (
-    <nav className="nav" aria-label="Main">
+    <nav className="nav" aria-label={t.main}>
       <div className="container nav__inner">
         <Link href="/" className="logo" onClick={close}>
           Horizon<span className="logo__dot" aria-hidden="true">.</span>
@@ -32,7 +51,7 @@ export function Nav({ pathname }: { pathname: string | null }) {
 
         <button
           className="nav__toggle"
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? t.closeMenu : t.openMenu}
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
         >
@@ -55,7 +74,7 @@ export function Nav({ pathname }: { pathname: string | null }) {
                 <button
                   type="button"
                   className="nav__caret"
-                  aria-label="Show services"
+                  aria-label={t.showServices}
                   aria-expanded={servicesOpen}
                   onClick={() => setServicesOpen((o) => !o)}
                 >
@@ -87,15 +106,26 @@ export function Nav({ pathname }: { pathname: string | null }) {
               </Link>
             )
           )}
-          <span className="nav__link" aria-label="Language: English">
-            En
-          </span>
+          <a
+            className="nav__link nav__lang"
+            href={switchHref}
+            hrefLang={other}
+            lang={other}
+            aria-label={`${m.common.language}: ${localeNames[other]}`}
+            onClick={() => {
+              try {
+                document.cookie = `${LOCALE_COOKIE}=${other}; path=/; max-age=31536000; samesite=lax`;
+              } catch {}
+            }}
+          >
+            {other.toUpperCase()}
+          </a>
           <Link
             href={routes.jobs}
             className={`nav__link nav__cta${isActive(pathname, routes.jobs) ? " is-active" : ""}`}
             onClick={close}
           >
-            Find a job <Arrow />
+            {m.common.findJob} <Arrow />
           </Link>
         </div>
       </div>

@@ -2,12 +2,14 @@
 
 import { useMemo, useState } from "react";
 import type { JobSummary } from "@/lib/data";
+import { useI18n } from "@/lib/i18n/client";
 import { FilterSidebar } from "../FilterSidebar";
 import { JobCard } from "./JobCard";
 
 const unique = (values: string[]) => [...new Set(values.filter(Boolean))].sort();
 
 export function JobBrowser({ jobs, showCompany = true }: { jobs: JobSummary[]; showCompany?: boolean }) {
+  const t = useI18n().m.jobsUi;
   const [query, setQuery] = useState("");
   const [sectors, setSectors] = useState<string[]>([]);
   const [cities, setCities] = useState<string[]>([]);
@@ -26,8 +28,8 @@ export function JobBrowser({ jobs, showCompany = true }: { jobs: JobSummary[]; s
   }, [jobs, query, sectors, cities]);
 
   const groups = [
-    sectorOptions.length > 1 && { label: "Sector", options: sectorOptions, selected: sectors, onChange: setSectors },
-    cityOptions.length > 1 && { label: "City", options: cityOptions, selected: cities, onChange: setCities },
+    sectorOptions.length > 1 && { label: t.sector, options: sectorOptions, selected: sectors, onChange: setSectors },
+    cityOptions.length > 1 && { label: t.city, options: cityOptions, selected: cities, onChange: setCities },
   ].filter((g) => g !== false);
 
   return (
@@ -35,7 +37,7 @@ export function JobBrowser({ jobs, showCompany = true }: { jobs: JobSummary[]; s
       <FilterSidebar
         search={query}
         onSearch={setQuery}
-        searchLabel="Search for a position"
+        searchLabel={t.searchLabel}
         groups={groups}
         onReset={() => {
           setQuery("");
@@ -45,18 +47,18 @@ export function JobBrowser({ jobs, showCompany = true }: { jobs: JobSummary[]; s
       />
 
       <div>
-        <h2 className="sr-only">Open positions</h2>
+        <h2 className="sr-only">{t.heading}</h2>
         <p className="results__count" aria-live="polite">
-          {filtered.length} {filtered.length === 1 ? "position" : "positions"}
+          {filtered.length} {filtered.length === 1 ? t.one : t.many}
         </p>
         {filtered.length > 0 ? (
           <div className="job-list">
             {filtered.map((job) => (
-              <JobCard key={job.slug} job={job} showCompany={showCompany} />
+              <JobCard key={job.slug} job={job} showCompany={showCompany} consultLabel={t.consult} />
             ))}
           </div>
         ) : (
-          <p className="results__empty">No positions match these filters.</p>
+          <p className="results__empty">{t.empty}</p>
         )}
       </div>
     </div>

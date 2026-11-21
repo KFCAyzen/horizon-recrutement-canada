@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { JobSummary } from "@/lib/data";
 import { routes } from "@/lib/site";
 import { ButtonLink } from "../ButtonLink";
+import Link from "../Link";
 
 export function JobLogo({ src, size = 72 }: { src: string | null; size?: number }) {
   if (!src) return <div className="job-card__logo job-card__logo--empty" aria-hidden="true" />;
@@ -24,7 +24,15 @@ export function JobMeta({ job }: { job: JobSummary }) {
   );
 }
 
-export function JobCard({ job, showCompany = true }: { job: JobSummary; showCompany?: boolean }) {
+export function JobCard({
+  job,
+  showCompany = true,
+  consultLabel,
+}: {
+  job: JobSummary;
+  showCompany?: boolean;
+  consultLabel: string;
+}) {
   const href = `${routes.jobs}/${job.slug}`;
   return (
     <article className="job-card">
@@ -40,7 +48,7 @@ export function JobCard({ job, showCompany = true }: { job: JobSummary; showComp
         )}
         <JobMeta job={job} />
         <ButtonLink href={href} variant="text">
-          Consult the position
+          {consultLabel}
         </ButtonLink>
       </div>
     </article>

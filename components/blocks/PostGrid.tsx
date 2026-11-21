@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { routes } from "@/lib/site";
+import Link from "../Link";
 
 export type PostSummary = {
   slug: string;

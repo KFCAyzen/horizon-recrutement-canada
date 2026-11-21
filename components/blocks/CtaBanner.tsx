@@ -1,19 +1,21 @@
 import { routes } from "@/lib/site";
+import { getMessages } from "@/lib/i18n/server";
 import { ButtonLink } from "../ButtonLink";
 import { Section } from "./Section";
 
-export function CtaBanner({
+export async function CtaBanner({
   title,
-  cta = { label: "Start now", href: routes.contact },
+  cta,
 }: {
   title: string;
   cta?: { label: string; href: string };
 }) {
+  const button = cta ?? { label: (await getMessages()).common.startNow, href: routes.contact };
   return (
     <Section>
       <div className="cta-banner">
         <h2>{title}</h2>
-        <ButtonLink href={cta.href}>{cta.label}</ButtonLink>
+        <ButtonLink href={button.href}>{button.label}</ButtonLink>
       </div>
     </Section>
   );

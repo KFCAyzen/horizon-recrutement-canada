@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { images } from "@/lib/content";
+import { getMessages } from "@/lib/i18n/server";
 import { routes } from "@/lib/site";
 import { ButtonLink } from "./ButtonLink";
 
-export function Hero() {
+export async function Hero() {
+  const { hero } = await getMessages();
   return (
     <header className="hero">
       {/* The LCP element: fetched eagerly at high priority, responsive AVIF/WebP, blur placeholder.
@@ -21,15 +23,12 @@ export function Hero() {
         className="hero__img"
       />
       <div className="container hero__content">
-        <h1>Your Partner in Immigration and International Recruitment</h1>
-        <p>
-          Horizon Recrutement Canada guides international talent through every step of immigrating,
-          and helps Canadian employers hire qualified people from abroad.
-        </p>
+        <h1>{hero.title}</h1>
+        <p>{hero.body}</p>
         <div className="hero__actions">
-          <ButtonLink href={routes.jobs}>Job Seeker | Find a Job</ButtonLink>
+          <ButtonLink href={routes.jobs}>{hero.seeker}</ButtonLink>
           <ButtonLink href={routes.services} variant="ghost">
-            Employers | Learn About Our Services
+            {hero.employers}
           </ButtonLink>
         </div>
       </div>

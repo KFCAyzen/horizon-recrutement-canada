@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useI18n } from "@/lib/i18n/client";
 import { Arrow } from "./Arrow";
 
 /**
@@ -8,6 +9,7 @@ import { Arrow } from "./Arrow";
  * Nothing is sent anywhere yet; wire a server action + email provider here later.
  */
 export function ContactForm() {
+  const t = useI18n().m.form;
   const [sent, setSent] = useState(false);
   const [fileName, setFileName] = useState("");
 
@@ -21,10 +23,10 @@ export function ContactForm() {
   if (sent) {
     return (
       <div className="form-success" role="status">
-        <h2>Thank you for contacting us!</h2>
-        <p>A member of our team will contact you shortly.</p>
+        <h2>{t.thanksTitle}</h2>
+        <p>{t.thanksBody}</p>
         <button type="button" onClick={() => setSent(false)}>
-          Send another message
+          {t.another}
         </button>
       </div>
     );
@@ -34,20 +36,20 @@ export function ContactForm() {
     <form className="form" onSubmit={handleSubmit}>
       <div className="form__row">
         <div className="field">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">{t.name}</label>
           <input id="name" name="name" autoComplete="name" required />
         </div>
         <div className="field">
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">{t.email}</label>
           <input id="email" name="email" type="email" autoComplete="email" required />
         </div>
       </div>
       <div className="field">
-        <label htmlFor="subject">Subject</label>
+        <label htmlFor="subject">{t.subject}</label>
         <input id="subject" name="subject" required />
       </div>
       <div className="field">
-        <label htmlFor="message">Message</label>
+        <label htmlFor="message">{t.message}</label>
         <textarea id="message" name="message" required />
       </div>
       <div className="file-input">
@@ -58,11 +60,11 @@ export function ContactForm() {
           accept=".pdf,.doc,.docx,.jpg,.png"
           onChange={(e) => setFileName(e.target.files?.[0]?.name ?? "")}
         />
-        <label htmlFor="document">Upload a document</label>
-        <span>{fileName || "PDF, Word or image · max 10 MB"}</span>
+        <label htmlFor="document">{t.upload}</label>
+        <span>{fileName || t.fileHint}</span>
       </div>
       <button type="submit" className="btn btn--primary">
-        Send <Arrow />
+        {t.send} <Arrow />
       </button>
     </form>
   );

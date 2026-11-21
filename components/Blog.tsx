@@ -1,18 +1,20 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { ArticleSummary } from "@/lib/data";
 import { routes } from "@/lib/site";
+import { getMessages } from "@/lib/i18n/server";
+import Link from "./Link";
 
 /** Homepage teaser: photo + title cards. */
-export function Blog({ posts }: { posts: ArticleSummary[] }) {
+export async function Blog({ posts }: { posts: ArticleSummary[] }) {
+  const t = (await getMessages()).home.blog;
   return (
     <section className="blog">
       <div className="container">
-        <p className="eyebrow">Blog and resources</p>
+        <p className="eyebrow">{t.eyebrow}</p>
         <h2 className="h2">
-          A multitude of resources
+          {t.titleLine1}
           <br />
-          to better guide you
+          {t.titleLine2}
         </h2>
         <div className="blog__grid">
           {posts.map((post) => (

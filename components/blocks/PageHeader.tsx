@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { ImageSrc } from "@/lib/content";
 import { Arrow } from "../Arrow";
+import Link from "../Link";
 import { ButtonLink } from "../ButtonLink";
 import type { Tone } from "./Section";
 

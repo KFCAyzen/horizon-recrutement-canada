@@ -2,10 +2,12 @@
 
 import { useMemo, useState } from "react";
 import type { ArticleSummary } from "@/lib/data";
+import { useI18n } from "@/lib/i18n/client";
 import { FilterSidebar } from "./FilterSidebar";
 import { PostGrid } from "./blocks/PostGrid";
 
 export function ResourceBrowser({ articles, categories }: { articles: ArticleSummary[]; categories: string[] }) {
+  const t = useI18n().m.resourcesUi;
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState<string[]>([]);
 
@@ -23,8 +25,8 @@ export function ResourceBrowser({ articles, categories }: { articles: ArticleSum
       <FilterSidebar
         search={query}
         onSearch={setQuery}
-        searchLabel="Search for a publication"
-        groups={[{ label: "Category", options: categories, selected, onChange: setSelected }]}
+        searchLabel={t.searchLabel}
+        groups={[{ label: t.category, options: categories, selected, onChange: setSelected }]}
         onReset={() => {
           setQuery("");
           setSelected([]);
@@ -32,14 +34,14 @@ export function ResourceBrowser({ articles, categories }: { articles: ArticleSum
       />
 
       <div>
-        <h2 className="sr-only">Publications</h2>
+        <h2 className="sr-only">{t.heading}</h2>
         <p className="results__count" aria-live="polite">
-          {filtered.length} {filtered.length === 1 ? "publication" : "publications"}
+          {filtered.length} {filtered.length === 1 ? t.one : t.many}
         </p>
         {filtered.length > 0 ? (
           <PostGrid posts={filtered} />
         ) : (
-          <p className="results__empty">No publications match these filters.</p>
+          <p className="results__empty">{t.empty}</p>
         )}
       </div>
     </div>

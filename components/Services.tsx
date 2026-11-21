@@ -1,18 +1,19 @@
-import { home } from "@/lib/content";
+import { buildContent } from "@/lib/content";
+import { getMessages } from "@/lib/i18n/server";
 import { routes } from "@/lib/site";
 import { ButtonLink } from "./ButtonLink";
 
-export function Services() {
+export async function Services() {
+  const m = await getMessages();
+  const t = m.home.services;
+  const { home } = buildContent(m);
   return (
     <section className="services">
       <div className="container">
-        <p className="eyebrow">Business services</p>
-        <h2 className="h2">Employers: Recruit and Support Your International Talent</h2>
-        <p className="lead">
-          From finding talent abroad to handling the immigration paperwork their hiring requires,
-          Horizon is with you at every step.
-        </p>
-        <ButtonLink href={routes.contact}>Talk to an expert</ButtonLink>
+        <p className="eyebrow">{t.eyebrow}</p>
+        <h2 className="h2">{t.title}</h2>
+        <p className="lead">{t.lead}</p>
+        <ButtonLink href={routes.contact}>{t.cta}</ButtonLink>
 
         <div className="services__cards">
           {home.services.map((s) => (
@@ -20,7 +21,7 @@ export function Services() {
               <h3>{s.title}</h3>
               <p>{s.body}</p>
               <ButtonLink href={s.href} variant="text">
-                Learn more<span className="sr-only"> about {s.title}</span>
+                {m.common.learnMore}<span className="sr-only"> {m.common.about} {s.title}</span>
               </ButtonLink>
             </article>
           ))}
