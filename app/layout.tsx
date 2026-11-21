@@ -9,10 +9,11 @@ import "@/styles/prose.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Talentech | Your Partner in Immigration and International Recruitment",
-    template: "%s | Talentech",
+    default: "Horizon Recrutement Canada | Immigration and International Recruitment",
+    template: "%s | Horizon Recrutement Canada",
   },
-  description: "Practice reproduction of an immigration and international recruitment website.",
+  description:
+    "Horizon Recrutement Canada helps Canadian employers hire skilled international talent and guides candidates through every step of immigrating to Canada.",
 };
 
 // The original site uses the system-ui font stack (see --font in globals.css),

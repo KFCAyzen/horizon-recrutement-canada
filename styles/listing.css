@@ -74,7 +74,7 @@ legend.filters__label { padding: 0; }
   background: var(--white);
   transition: box-shadow 0.2s ease;
 }
-.job-card:hover { box-shadow: 0 10px 28px rgba(28, 28, 28, 0.08); }
+.job-card:hover { box-shadow: 0 10px 28px rgba(12, 27, 64, 0.08); }
 .job-card__logo {
   position: relative;
   width: 72px;
@@ -96,7 +96,7 @@ legend.filters__label { padding: 0; }
 .job-meta span + span::before {
   content: "•";
   margin: 0 10px;
-  color: #cdb9c5;
+  color: #b9c2dc;
 }
 .job-card .text-link { margin-top: 16px; font-size: 15px; }
 

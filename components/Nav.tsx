@@ -27,7 +27,7 @@ export function Nav({ pathname }: { pathname: string | null }) {
     <nav className="nav" aria-label="Main">
       <div className="container nav__inner">
         <Link href="/" className="logo" onClick={close}>
-          TalenTech
+          Horizon<span className="logo__dot" aria-hidden="true">.</span>
         </Link>
 
         <button

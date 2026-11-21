@@ -1,9 +1,12 @@
 import Link from "next/link";
-import { Fragment } from "react";
-import { contact, footerColumns, routes } from "@/lib/site";
+import { brand, contact, footerColumns, routes } from "@/lib/site";
 import { ButtonLink } from "./ButtonLink";
+import { Address, PhoneEmail } from "./ContactDetails";
 
 export function Footer() {
+  const hasPhoneOrEmail = Boolean(contact.phone || contact.email);
+  const hasAddress = Boolean(contact.address?.length);
+
   return (
     <>
       <footer className="footer">
@@ -11,28 +14,18 @@ export function Footer() {
           <div className="footer__grid">
             <div>
               <p className="footer__tagline">
-                The future belongs
+                Your next chapter
                 <br />
-                to those who dare.
+                starts in Canada.
               </p>
-              <p className="footer__sub">Let&apos;s begin the next stage of your life!</p>
-              <div className="footer__contact">
-                <p>
-                  <a href={contact.phoneHref}>{contact.phone}</a>
-                </p>
-                <p>
-                  <a href={`mailto:${contact.email}`}>{contact.email}</a>
-                </p>
-                <hr />
-                <p className="footer__address">
-                  {contact.address.map((line, i) => (
-                    <Fragment key={line}>
-                      {i > 0 && <br />}
-                      {line}
-                    </Fragment>
-                  ))}
-                </p>
-              </div>
+              <p className="footer__sub">Let&apos;s build it together.</p>
+              {(hasPhoneOrEmail || hasAddress) && (
+                <div className="footer__contact">
+                  <PhoneEmail />
+                  {hasPhoneOrEmail && hasAddress && <hr />}
+                  <Address className="footer__address" />
+                </div>
+              )}
             </div>
 
             {footerColumns.map((col) => (
@@ -60,14 +53,12 @@ export function Footer() {
       <div className="legal">
         <div className="container legal__inner">
           <div>
-            Talentech © 2022 - All rights reserved
-            <br />
-            Designed by <u>Saint-Laurent Agency</u>
+            © 2026 {brand.name}. All rights reserved.
           </div>
           <div>
-            Employment Agency Permit No. AP-2000408
-            <br />
-            Temporary Foreign Worker Recruitment Agency Permit No. AR-2000409
+            {contact.permits.map((permit) => (
+              <div key={permit}>{permit}</div>
+            ))}
           </div>
           <div className="socials">
             <a href="#" aria-label="Facebook">

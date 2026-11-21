@@ -10,7 +10,7 @@ export function About({ openPositions }: { openPositions: number }) {
       <div className="container">
         <div className="about__grid">
           <div>
-            <p className="eyebrow">Who is Talentech?</p>
+            <p className="eyebrow">Who we are</p>
             <h2 className="h2">We help international talent settle in Canada</h2>
           </div>
           <div className="about__right">

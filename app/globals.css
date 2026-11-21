@@ -2,15 +2,18 @@
    Design tokens (measured from the live site)
    ========================================================== */
 :root {
-  --primary: #c81e7d;
-  --primary-dark: #9e1563;
-  --ink: #1c1c1c;
-  --ink-muted: #6e6470;
-  --tint: #f7edf3;
-  --tint-soft: #fcf7fa;
+  /* Horizon Recrutement Canada logo palette: navy + maple red */
+  --primary: #14295b;
+  --primary-dark: #0c1b40;
+  --accent: #d6221f;
+  --accent-dark: #b01a18;
+  --ink: #14295b;
+  --ink-muted: #5c6685;
+  --tint: #edf0f7;
+  --tint-soft: #f7f8fc;
   --white: #ffffff;
-  --line: #eadce5;
-  --dark: #1c1c1c;
+  --line: #dde2ee;
+  --dark: #0c1b40;
 
   --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -97,10 +100,10 @@ button:hover .arrow { transform: translateX(4px); }
   color: var(--white);
   transition: background 0.2s ease;
 }
-.btn--primary { background: var(--primary); }
-.btn--primary:hover { background: var(--primary-dark); }
-.btn--ghost { background: rgba(28, 28, 28, 0.7); }
-.btn--ghost:hover { background: rgba(28, 28, 28, 0.85); }
+.btn--primary { background: var(--accent); }
+.btn--primary:hover { background: var(--accent-dark); }
+.btn--ghost { background: rgba(12, 27, 64, 0.7); }
+.btn--ghost:hover { background: rgba(12, 27, 64, 0.85); }
 
 .text-link {
   display: inline-flex;
@@ -128,6 +131,7 @@ button:hover .arrow { transform: translateX(4px); }
   align-items: center;
   justify-content: space-between;
 }
+.logo__dot { color: var(--accent); }
 .logo {
   font-size: 32px;
   font-weight: 600;
@@ -163,7 +167,7 @@ button:hover .arrow { transform: translateX(4px); }
 .nav__link.is-active::before,
 .nav__link:hover::before { transform: scaleX(1); }
 .nav__link svg { width: 12px; height: 12px; transition: transform 0.2s ease; }
-.nav__cta { color: var(--primary); }
+.nav__cta { color: var(--accent); }
 .nav__cta .arrow { width: 26px; height: 12px; }
 
 /* Services dropdown */
@@ -185,7 +189,7 @@ button:hover .arrow { transform: translateX(4px); }
   min-width: 320px;
   padding: 12px 0;
   background: var(--white);
-  box-shadow: 0 16px 32px rgba(28, 28, 28, 0.12);
+  box-shadow: 0 16px 32px rgba(12, 27, 64, 0.12);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4px);
@@ -232,18 +236,18 @@ button:hover .arrow { transform: translateX(4px); }
   overflow: hidden;
   padding: 96px 0;
   color: var(--white);
-  background: #241a2a;
+  background: #0c1b40;
 }
 .hero__img { object-fit: cover; object-position: center 60%; z-index: -2; }
-/* Readability scrim: dark on the text side, with a hint of brand magenta. */
+/* Readability scrim: dark on the text side, with a hint of brand red. */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(to right, rgba(18, 8, 20, 0.85), rgba(18, 8, 20, 0.35) 55%, rgba(18, 8, 20, 0) 80%),
-    linear-gradient(to top, rgba(200, 30, 125, 0.25), rgba(200, 30, 125, 0) 45%);
+    linear-gradient(to right, rgba(8, 18, 44, 0.85), rgba(8, 18, 44, 0.35) 55%, rgba(8, 18, 44, 0) 80%),
+    linear-gradient(to top, rgba(214, 34, 31, 0.25), rgba(214, 34, 31, 0) 45%);
 }
 .hero__content { position: relative; }
 .hero h1 {
@@ -281,7 +285,7 @@ button:hover .arrow { transform: translateX(4px); }
   height: 24px;
   background: none;
   border: 0;
-  color: #cdb9c5;
+  color: #b9c2dc;
   cursor: pointer;
   padding: 0;
 }
@@ -307,7 +311,7 @@ button:hover .arrow { transform: translateX(4px); }
 .partner img { object-fit: contain; padding: 8px; }
 .partner:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(28, 28, 28, 0.1);
+  box-shadow: 0 8px 20px rgba(12, 27, 64, 0.1);
 }
 
 /* ==========================================================
@@ -371,7 +375,7 @@ button:hover .arrow { transform: translateX(4px); }
   top: 50%;
   right: -49px;
   width: 48px;
-  border-top: 1px dashed #c9a3b9;
+  border-top: 1px dashed #a9b4d3;
 }
 .steps--4 .step:not(:nth-child(4n))::after { right: -33px; width: 32px; }
 .step:has(+ .step--cta)::after { display: none; }
@@ -409,7 +413,7 @@ button:hover .arrow { transform: translateX(4px); }
 }
 .service-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(28, 28, 28, 0.08);
+  box-shadow: 0 12px 32px rgba(12, 27, 64, 0.08);
 }
 .service-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
 .service-card p { font-size: 14px; line-height: 21px; color: var(--ink-muted); margin-bottom: 24px; }
@@ -446,7 +450,7 @@ button:hover .arrow { transform: translateX(4px); }
 }
 .post:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(28, 28, 28, 0.08);
+  box-shadow: 0 12px 32px rgba(12, 27, 64, 0.08);
 }
 
 /* ==========================================================
@@ -468,7 +472,7 @@ button:hover .arrow { transform: translateX(4px); }
 .footer__contact { font-size: 14px; line-height: 21px; }
 .footer__contact hr {
   border: 0;
-  border-top: 1px solid #dfccd7;
+  border-top: 1px solid #ccd3e6;
   width: 260px;
   margin: 16px 0;
 }

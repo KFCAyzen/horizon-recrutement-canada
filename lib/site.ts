@@ -11,7 +11,6 @@ export const routes = {
   jobs: "/jobs",
   siteMap: "/site-map",
   policies: "/policies",
-  credits: "/credits",
 } as const;
 
 export const serviceLinks = [
@@ -49,15 +48,33 @@ export const footerColumns = [
     links: [
       { label: "Policies", href: routes.policies },
       { label: "Privacy & Preferences Centre", href: routes.policies },
-      { label: "Photo credits", href: routes.credits },
     ],
   },
 ];
 
-export const contact = {
-  phone: "1 (514) 657-8007",
-  phoneHref: "tel:+15146578007",
-  email: "contact@talentech.ca",
-  address: ["1395 Fleury Street East", "Suite 60.2 – P.O. Box 11", "Montreal, QC H2C 1R7", "Canada"],
-  hours: { days: "Monday to Friday", time: "9:00 a.m. to 5:00 p.m." },
+export const brand = {
+  name: "Horizon Recrutement Canada",
+  short: "Horizon",
+};
+
+export type Contact = {
+  phone: string | null;
+  /** tel: link, e.g. "tel:+15145550000" */
+  phoneHref: string | null;
+  email: string | null;
+  address: string[] | null;
+  hours: { days: string; time: string } | null;
+  /** Licence/permit numbers the business actually holds, one per line. */
+  permits: string[];
+};
+
+// TODO(contact): fill in Horizon Recrutement Canada's real details.
+// Anything left null/empty is not rendered, so nothing made-up ever shows on the site.
+export const contact: Contact = {
+  phone: null,
+  phoneHref: null,
+  email: null,
+  address: null,
+  hours: null,
+  permits: [],
 };

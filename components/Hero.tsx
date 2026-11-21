@@ -23,8 +23,8 @@ export function Hero() {
       <div className="container hero__content">
         <h1>Your Partner in Immigration and International Recruitment</h1>
         <p>
-          Talentech, an immigration and recruitment firm, assists international talent with their
-          immigration process and helps Canadian companies hire qualified candidates from abroad.
+          Horizon Recrutement Canada guides international talent through every step of immigrating,
+          and helps Canadian employers hire qualified people from abroad.
         </p>
         <div className="hero__actions">
           <ButtonLink href={routes.jobs}>Job Seeker | Find a Job</ButtonLink>

@@ -29,7 +29,7 @@ const groups = [
 export default function SiteMapPage() {
   return (
     <>
-      <PageHeader eyebrow="Talentech" title="Site map" tone="white" />
+      <PageHeader eyebrow="Horizon Recrutement Canada" title="Site map" tone="white" />
       <Section tone="soft">
         <div className="sitemap">
           {groups.map((g) => (

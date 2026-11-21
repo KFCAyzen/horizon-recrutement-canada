@@ -3,7 +3,7 @@ import type { StaticImageData } from "next/image";
 import { routes } from "./site";
 
 // Static imports: next/image gets intrinsic sizes, AVIF/WebP variants and a blur placeholder.
-// Sources: Magnific stock (see /credits); resized by scripts/optimize-images.mjs.
+// Sources: Magnific stock photos; resized by scripts/optimize-images.mjs.
 import heroMontreal from "@/assets/images/hero-montreal.jpg";
 import headerRecruitment from "@/assets/images/header-recruitment.jpg";
 import headerImmigration from "@/assets/images/header-immigration.jpg";
@@ -50,7 +50,7 @@ export const servicesPage = {
   header: {
     eyebrow: "Business services",
     title: "Simplify your international talent acquisition",
-    lead: "Don't let labor shortages hold your business back. Discover the Talentech experience: key talent acquisition solutions designed to simplify the hiring of foreign talent.",
+    lead: "Don't let labor shortages hold your business back. Horizon makes hiring skilled people from abroad simple, from the first search to their first day.",
     cta: { label: "Hire now", href: routes.contact },
   },
   sections: [
@@ -98,7 +98,7 @@ export const recruitmentPage = {
   },
   advantages: {
     eyebrow: "Our advantages",
-    title: "Why choose Talentech?",
+    title: "Why choose Horizon?",
     lead: "Canada offers many job opportunities and advancement opportunities. Contact our team to learn more about the working conditions, compensation and benefits you could get based on your experience and expertise.",
     cta: { label: "Contact us today", href: routes.contact },
     items: [
@@ -182,13 +182,13 @@ export const immigrationPage = {
 /* ---------------------------------- About ---------------------------------- */
 export const aboutPage = {
   header: {
-    eyebrow: "About Talentech",
-    title: "Talentech, your partner in immigration and international recruitment",
-    lead: "Talentech supports Canadian companies with their international recruitment efforts and assists foreign workers with their immigration applications to Canada. From hiring to obtaining the necessary authorizations, we offer personalized support at every stage of the process.",
+    eyebrow: "About Horizon",
+    title: "Horizon Recrutement Canada, your partner in immigration and international recruitment",
+    lead: "Horizon supports Canadian companies with their international recruitment efforts and assists foreign workers with their immigration applications to Canada. From hiring to obtaining the necessary authorizations, we offer personalized support at every stage of the process.",
   },
   advantage: {
     eyebrow: "What sets us apart",
-    title: "Why work with TalenTech?",
+    title: "Why work with Horizon?",
     lead: "Our combined expertise in international recruitment and immigration enables us to support companies and workers at every stage of their project. We prioritize a personalized, thorough approach tailored to each situation.",
     steps: [
       { title: "Dual Expertise", body: "Our expertise in immigration and recruitment allows us to support companies and workers at every stage of their project." },
@@ -220,13 +220,13 @@ export const aboutPage = {
 /* ------------------------------ Jobs / Resources ------------------------------ */
 export const jobsPage = {
   eyebrow: "Finding a job in Canada",
-  title: "Find a job in Canada with Talentech!",
-  lead: "Would you like to breathe new life into your career and find a job in Canada? You've come to the right place! Discover our international recruitment support program for positions with a physical presence in Canada, and remote hiring with a Canadian employer through Talentech.",
+  title: "Find a job in Canada with Horizon",
+  lead: "Would you like to breathe new life into your career and find a job in Canada? You've come to the right place! Discover our international recruitment support program for positions with a physical presence in Canada, and remote hiring with a Canadian employer through Horizon.",
 };
 
 export const resourcesPage = {
   eyebrow: "Resources",
-  title: "Talentech blog: discover the latest news on immigration and international recruitment",
+  title: "The Horizon blog: news and guides on immigration and international recruitment",
   lead: "Our team writes articles on various aspects of the international recruitment, immigration and relocation process.",
 };
 

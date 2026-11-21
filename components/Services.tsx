@@ -9,8 +9,8 @@ export function Services() {
         <p className="eyebrow">Business services</p>
         <h2 className="h2">Employers: Recruit and Support Your International Talent</h2>
         <p className="lead">
-          Talentech supports you every step of the way, from sourcing talent internationally to
-          handling the immigration procedures required for their hiring.
+          From finding talent abroad to handling the immigration paperwork their hiring requires,
+          Horizon is with you at every step.
         </p>
         <ButtonLink href={routes.contact}>Talk to an expert</ButtonLink>
 
