@@ -35,10 +35,10 @@ export type Contact = {
 // TODO(contact): fill in Horizon Recrutement Canada's real details.
 // Anything left null/empty is not rendered, so nothing made-up ever shows on the site.
 export const contact: Contact = {
-  phone: null,
-  phoneHref: null,
-  email: null,
-  address: null,
+  phone: "514 664-2724",
+  phoneHref: "tel:+15146642724",
+  email: "contact@horizonrecrutement.ca",
+  address: ["59 Jessie St", "L6Y 1L5"],
   hours: null,
   permits: [],
 };
