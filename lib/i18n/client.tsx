@@ -5,7 +5,7 @@ import type { Locale } from "./config";
 import type { Messages } from "./messages/en";
 
 /** Only the slices interactive components need; keeps the client bundle small. */
-export type ClientMessages = Pick<Messages, "nav" | "form" | "filters" | "jobsUi" | "resourcesUi" | "home" | "common">;
+export type ClientMessages = Pick<Messages, "nav" | "form" | "clientForm" | "partnerForm" | "filters" | "jobsUi" | "resourcesUi" | "home" | "common">;
 
 type Value = { lang: Locale; m: ClientMessages };
 const I18nContext = createContext<Value | null>(null);

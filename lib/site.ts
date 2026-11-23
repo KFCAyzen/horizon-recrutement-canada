@@ -9,6 +9,8 @@ export const routes = {
   about: "/about",
   resources: "/resources",
   contact: "/contact",
+  becomeClient: "/become-a-client",
+  becomePartner: "/become-a-partner",
   jobs: "/jobs",
   siteMap: "/site-map",
   policies: "/policies",

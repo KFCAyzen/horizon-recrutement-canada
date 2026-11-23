@@ -22,6 +22,8 @@ export async function Footer() {
       links: [
         { label: m.nav.recruitment, href: routes.recruitment },
         { label: m.nav.immigrationShort, href: routes.immigration },
+        { label: t.becomeClient, href: routes.becomeClient },
+        { label: t.becomePartner, href: routes.becomePartner },
       ],
     },
     {

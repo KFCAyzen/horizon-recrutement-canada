@@ -26,6 +26,17 @@ export async function Services() {
             </article>
           ))}
         </div>
+
+        <div className="client-cta">
+          <div>
+            <h3>{t.clientCta.title}</h3>
+            <p>{t.clientCta.body}</p>
+          </div>
+          <div className="client-cta__actions">
+            <ButtonLink href={routes.becomeClient}>{t.clientCta.cta}</ButtonLink>
+            <ButtonLink href={routes.becomePartner} className="btn--outline">{m.footer.becomePartner}</ButtonLink>
+          </div>
+        </div>
       </div>
     </section>
   );

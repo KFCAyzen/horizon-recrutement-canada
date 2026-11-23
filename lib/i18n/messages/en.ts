@@ -9,6 +9,8 @@ export const en = {
     titleSuffix: "Horizon Recrutement Canada",
     about: "About us",
     contact: "Contact",
+    becomeClient: "Become a client",
+    becomePartner: "Become a partner",
     jobs: "Find a job in Canada",
     policies: "Policies",
     resources: "International Recruitment Resources",
@@ -54,6 +56,8 @@ export const en = {
     navigation: "Navigation",
     aboutUs: "About us",
     siteMap: "Site map",
+    becomeClient: "Become a client",
+    becomePartner: "Become a partner",
     services: "Services",
     legal: "Legal",
     policies: "Policies",
@@ -109,6 +113,7 @@ export const en = {
       title: "Employers: Recruit and Support Your International Talent",
       lead: "From finding talent abroad to handling the immigration paperwork their hiring requires, Horizon is with you at every step.",
       cta: "Talk to an expert",
+      clientCta: { title: "Is your company looking to hire international talent?", body: "Ask to become one of our clients and let us find the right people for your team.", cta: "Become a client" },
       cards: [
         { title: "International Recruitment", body: "Looking for key talent to accelerate your growth? Our network of international candidates is ready to meet you." },
         { title: "Immigration", body: "Have you found the perfect candidate and want to help them with the immigration process? Our team can help you." },
@@ -118,6 +123,7 @@ export const en = {
       eyebrow: "Blog and resources",
       titleLine1: "A multitude of resources",
       titleLine2: "to better guide you",
+      cameroonCard: "Recruitment in Cameroon",
     },
   },
 
@@ -297,6 +303,112 @@ export const en = {
     relatedEyebrow: "Blog and resources",
     relatedTitle: "A host of resources to help guide you",
     back: "All resources",
+  },
+
+  clientRequest: { eyebrow: "For employers", title: "Ask to become one of our clients", lead: "Is your company looking to hire international talent? Tell us about your needs and our team will get back to you to discuss how Horizon can support your recruitment." },
+
+  partnerRequest: {
+    "eyebrow": "For organizations",
+    "title": "Propose a partnership",
+    "lead": "Agency, firm, training institution or organization: tell us about your profile and the collaboration you have in mind."
+  },
+
+  partnerForm: {
+    "title": "Partnership request",
+    "s1": "1. Partner information",
+    "name": "Company or organization name",
+    "country": "Country of establishment",
+    "selectCountry": "Select a country",
+    "address": "City and head office address",
+    "website": "Website (optional)",
+    "email": "Business email address",
+    "phone": "Business phone",
+    "s2": "2. Partner profile",
+    "orgType": "Type of organization",
+    "orgTypes": [
+      "Recruitment agency",
+      "Placement firm",
+      "Consulting firm",
+      "Training institution",
+      "University or educational institution",
+      "Private company",
+      "Organization or association",
+      "Other"
+    ],
+    "operating": "Countries in which you operate",
+    "operatingHint": "Multiple selection",
+    "s3": "3. Partnership proposal",
+    "partnershipQ": "What type of partnership would you like to develop with {brand}?",
+    "partnerships": [
+      "International recruitment partnership",
+      "Worker placement partnership",
+      "Candidate search and selection partnership",
+      "Professional training partnership",
+      "International mobility partnership",
+      "Institutional partnership",
+      "Other"
+    ],
+    "proposal": "Briefly describe your partnership proposal",
+    "certify": "I certify that the information provided is accurate.",
+    "privacy": "I accept the privacy policy.",
+    "terms": "I accept the terms and conditions.",
+    "send": "Submit my request",
+    "thanksTitle": "Thank you for your proposal!",
+    "thanksBody": "We have received your partnership request. A member of our team will contact you shortly.",
+    "another": "Submit another request"
+  },
+
+  clientForm: {
+    "title": "Professional registration request",
+    "s1": "1. Company information",
+    "company": "Company name",
+    "country": "Country of registration",
+    "selectCountry": "Select a country",
+    "address": "City and head office address",
+    "regNumber": "Company registration number",
+    "website": "Website (optional)",
+    "email": "Business email address",
+    "phone": "Business phone",
+    "s2": "2. Company activities",
+    "field": "Field of activity",
+    "fields": [
+      "Recruitment agency",
+      "Placement firm",
+      "Consulting firm",
+      "Private company",
+      "Training organization",
+      "Immigration firm",
+      "Other"
+    ],
+    "operating": "Countries in which the company operates",
+    "operatingHint": "Multiple selection",
+    "s3": "3. Services sought",
+    "servicesQ": "Which services are you looking for from {brand}?",
+    "services": [
+      "International recruitment",
+      "Placement of workers in Canada",
+      "Search for qualified candidates",
+      "Support for employers",
+      "Immigration support",
+      "International mobility",
+      "Other"
+    ],
+    "volume": "Estimated number of candidates to recruit or support per year",
+    "volumes": [
+      "1 to 5",
+      "6 to 20",
+      "21 to 50",
+      "51 to 100",
+      "More than 100"
+    ],
+    "s4": "4. Validation and consent",
+    "certify": "I certify that the information provided is accurate.",
+    "privacy": "I accept the {brand} privacy policy.",
+    "terms": "I accept the terms and conditions of use.",
+    "send": "Submit my request",
+    "thanksTitle": "Thank you for your interest!",
+    "thanksBody": "We have received your registration request. A member of our team will contact you shortly.",
+    "another": "Submit another request"
   },
 
   contactPage: {

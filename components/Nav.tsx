@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { routes } from "@/lib/site";
@@ -45,8 +46,12 @@ export function Nav({ pathname: fullPathname }: { pathname: string | null }) {
   return (
     <nav className="nav" aria-label={t.main}>
       <div className="container nav__inner">
-        <Link href="/" className="logo" onClick={close}>
-          Horizon<span className="logo__dot" aria-hidden="true">.</span>
+        <Link href="/" className="logo" onClick={close} aria-label="Horizon Recrutement Canada">
+          <Image src="/images/logo-mark.png" alt="" width={52} height={48} className="logo__mark" priority />
+          <span className="logo__text">
+            <span className="logo__name">HORIZON</span>
+            <span className="logo__sub">Recrutement <b>Canada</b></span>
+          </span>
         </Link>
 
         <button

@@ -22,6 +22,8 @@ export default async function SiteMapPage() {
         { label: m.nav.services, href: routes.services },
         { label: m.nav.recruitment, href: routes.recruitment },
         { label: m.nav.immigrationFull, href: routes.immigration },
+        { label: m.footer.becomeClient, href: routes.becomeClient },
+        { label: m.footer.becomePartner, href: routes.becomePartner },
         { label: m.common.findJob, href: routes.jobs },
         { label: m.nav.resources, href: routes.resources },
         { label: m.nav.contact, href: routes.contact },

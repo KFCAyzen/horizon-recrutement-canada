@@ -9,6 +9,8 @@ export const fr: Messages = {
     titleSuffix: "Horizon Recrutement Canada",
     about: "À propos",
     contact: "Contact",
+    becomeClient: "Devenir client",
+    becomePartner: "Devenir partenaire",
     jobs: "Trouver un emploi au Canada",
     policies: "Politiques",
     resources: "Ressources sur le recrutement international",
@@ -54,6 +56,8 @@ export const fr: Messages = {
     navigation: "Navigation",
     aboutUs: "À propos",
     siteMap: "Plan du site",
+    becomeClient: "Devenir client",
+    becomePartner: "Devenir partenaire",
     services: "Services",
     legal: "Mentions légales",
     policies: "Politiques",
@@ -109,6 +113,7 @@ export const fr: Messages = {
       title: "Employeurs : recrutez et accompagnez vos talents internationaux",
       lead: "De la recherche de talents à l'étranger aux démarches d'immigration que leur embauche exige, Horizon est à vos côtés à chaque étape.",
       cta: "Parler à un expert",
+      clientCta: { title: "Votre entreprise souhaite embaucher des talents internationaux?", body: "Demandez à devenir l'un de nos clients et laissez-nous trouver les bonnes personnes pour votre équipe.", cta: "Devenir client" },
       cards: [
         { title: "Recrutement international", body: "Vous cherchez des talents clés pour accélérer votre croissance? Notre réseau de candidats internationaux est prêt à vous rencontrer." },
         { title: "Immigration", body: "Vous avez trouvé le candidat idéal et souhaitez l'aider dans ses démarches d'immigration? Notre équipe peut vous accompagner." },
@@ -118,6 +123,7 @@ export const fr: Messages = {
       eyebrow: "Blogue et ressources",
       titleLine1: "Une multitude de ressources",
       titleLine2: "pour mieux vous guider",
+      cameroonCard: "Recrutement au Cameroun",
     },
   },
 
@@ -297,6 +303,112 @@ export const fr: Messages = {
     relatedEyebrow: "Blogue et ressources",
     relatedTitle: "Une foule de ressources pour vous guider",
     back: "Toutes les ressources",
+  },
+
+  clientRequest: { eyebrow: "Pour les employeurs", title: "Demandez à devenir l'un de nos clients", lead: "Votre entreprise souhaite embaucher des talents internationaux? Parlez-nous de vos besoins et notre équipe communiquera avec vous pour discuter de la façon dont Horizon peut soutenir votre recrutement." },
+
+  partnerRequest: {
+    "eyebrow": "Pour les organisations",
+    "title": "Proposez-nous un partenariat",
+    "lead": "Agence, cabinet, établissement de formation ou organisation : parlez-nous de votre profil et de la collaboration que vous imaginez avec nous."
+  },
+
+  partnerForm: {
+    "title": "Demande de partenariat",
+    "s1": "1. Informations sur le partenaire",
+    "name": "Nom de l'entreprise ou de l'organisation",
+    "country": "Pays d'établissement",
+    "selectCountry": "Sélectionner un pays",
+    "address": "Ville et adresse du siège social",
+    "website": "Site Internet (facultatif)",
+    "email": "Adresse courriel professionnelle",
+    "phone": "Téléphone professionnel",
+    "s2": "2. Profil du partenaire",
+    "orgType": "Type d'organisation",
+    "orgTypes": [
+      "Agence de recrutement",
+      "Cabinet de placement",
+      "Cabinet de conseil",
+      "Établissement de formation",
+      "Université ou établissement d'enseignement",
+      "Entreprise privée",
+      "Organisation ou association",
+      "Autre"
+    ],
+    "operating": "Pays dans lesquels vous exercez vos activités",
+    "operatingHint": "Sélection multiple",
+    "s3": "3. Proposition de partenariat",
+    "partnershipQ": "Quel type de partenariat souhaitez-vous développer avec {brand}?",
+    "partnerships": [
+      "Partenariat en recrutement international",
+      "Partenariat en placement de travailleurs",
+      "Partenariat en recherche et sélection de candidats",
+      "Partenariat en formation professionnelle",
+      "Partenariat en mobilité internationale",
+      "Partenariat institutionnel",
+      "Autre"
+    ],
+    "proposal": "Présentez brièvement votre proposition de partenariat",
+    "certify": "Je certifie l'exactitude des informations fournies.",
+    "privacy": "J'accepte la politique de confidentialité.",
+    "terms": "J'accepte les conditions générales.",
+    "send": "Soumettre ma demande",
+    "thanksTitle": "Merci de votre proposition!",
+    "thanksBody": "Nous avons bien reçu votre demande de partenariat. Un membre de notre équipe communiquera avec vous sous peu.",
+    "another": "Soumettre une autre demande"
+  },
+
+  clientForm: {
+    "title": "Demande d'inscription professionnelle",
+    "s1": "1. Informations sur l'entreprise",
+    "company": "Nom de l'entreprise",
+    "country": "Pays d'enregistrement",
+    "selectCountry": "Sélectionner un pays",
+    "address": "Ville et adresse du siège social",
+    "regNumber": "Numéro d'enregistrement de l'entreprise",
+    "website": "Site Internet (facultatif)",
+    "email": "Adresse courriel professionnelle",
+    "phone": "Téléphone professionnel",
+    "s2": "2. Activités de l'entreprise",
+    "field": "Domaine d'activité",
+    "fields": [
+      "Agence de recrutement",
+      "Cabinet de placement",
+      "Cabinet de conseil",
+      "Entreprise privée",
+      "Organisme de formation",
+      "Cabinet d'immigration",
+      "Autre"
+    ],
+    "operating": "Pays dans lesquels l'entreprise exerce ses activités",
+    "operatingHint": "Sélection multiple",
+    "s3": "3. Services recherchés",
+    "servicesQ": "Quels services recherchez-vous auprès de {brand}?",
+    "services": [
+      "Recrutement international",
+      "Placement de travailleurs au Canada",
+      "Recherche de candidats qualifiés",
+      "Accompagnement des employeurs",
+      "Accompagnement en immigration",
+      "Mobilité internationale",
+      "Autres"
+    ],
+    "volume": "Nombre estimatif de candidats à recruter ou à accompagner par an",
+    "volumes": [
+      "1 à 5",
+      "6 à 20",
+      "21 à 50",
+      "51 à 100",
+      "Plus de 100"
+    ],
+    "s4": "4. Validation et consentement",
+    "certify": "Je certifie que les informations fournies sont exactes.",
+    "privacy": "J'accepte la politique de confidentialité de {brand}.",
+    "terms": "J'accepte les conditions générales d'utilisation.",
+    "send": "Soumettre ma demande",
+    "thanksTitle": "Merci de votre intérêt!",
+    "thanksBody": "Nous avons bien reçu votre demande d'inscription. Un membre de notre équipe communiquera avec vous sous peu.",
+    "another": "Soumettre une autre demande"
   },
 
   contactPage: {

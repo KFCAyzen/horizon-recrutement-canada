@@ -31,6 +31,8 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   const clientMessages = {
     nav: m.nav,
     form: m.form,
+    clientForm: m.clientForm,
+    partnerForm: m.partnerForm,
     filters: m.filters,
     jobsUi: m.jobsUi,
     resourcesUi: m.resourcesUi,
