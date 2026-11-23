@@ -9,10 +9,10 @@
   --accent-dark: #9a1f14;
   --ink: #2c2e35;
   --ink-muted: #5d6068;
-  --tint: #f6e4e1;
-  --tint-soft: #faf2f0;
+  --tint: #ececee;
+  --tint-soft: #f5f5f6;
   --white: #ffffff;
-  --line: #e6d9d6;
+  --line: #dcdde1;
   --dark: #2c2e35;
 
   --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -603,3 +603,66 @@ button:hover .arrow { transform: translateX(4px); }
 .stat strong { color: var(--primary); }
 .partners { background: var(--dark); color: var(--white); }
 .partners__label { color: var(--white); }
+
+/* ==========================================================
+   Bold brand pass: red + charcoal cards, menus, buttons
+   ========================================================== */
+/* Nav: red CTA button, red hover, dark dropdown */
+.nav__cta {
+  height: auto;
+  padding: 12px 20px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: var(--radius);
+}
+.nav__cta::before { display: none; }
+.nav__cta:hover { background: var(--primary-dark); }
+.nav__link:hover, .nav__link.is-active { color: var(--primary); }
+.nav__cta:hover, .nav__cta.is-active { color: var(--white); }
+.nav__dropdown { background: var(--dark); border-top: 3px solid var(--primary); }
+.nav__dropdown a { color: var(--white); }
+.nav__dropdown a:hover,
+.nav__dropdown a.is-active { background: var(--primary); color: var(--white); }
+
+/* Process: charcoal band with red step cards */
+.process { background: var(--dark); color: var(--white); }
+.process .lead, .process .eyebrow { color: var(--white); }
+.process .eyebrow { opacity: 0.8; }
+.process .step { background: var(--primary); border-color: var(--primary); color: var(--white); }
+.process .step__num { color: var(--white); opacity: 0.75; }
+.process .step p, .process .step li { color: rgba(255, 255, 255, 0.9); }
+.process .step::after { border-top-color: rgba(255, 255, 255, 0.4); }
+.process .step--cta { background: var(--white); border-color: var(--white); color: var(--ink); }
+.process .step--cta p { color: var(--ink-muted); }
+
+/* Steps on other pages (About, services): red cards too */
+.tone-tint .step, .tone-soft .step, .tone-white .step {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+.tone-tint .step__num, .tone-soft .step__num, .tone-white .step__num { color: var(--white); opacity: 0.75; }
+.tone-tint .step p, .tone-soft .step p, .tone-white .step p,
+.tone-tint .step li, .tone-soft .step li, .tone-white .step li { color: rgba(255, 255, 255, 0.9); }
+.tone-tint .step--cta, .tone-soft .step--cta, .tone-white .step--cta {
+  background: var(--dark);
+  border-color: var(--dark);
+}
+.tone-tint .step--cta .text-link, .tone-soft .step--cta .text-link, .tone-white .step--cta .text-link,
+.process .step--cta .text-link { color: var(--primary); }
+.tone-tint .step--cta .text-link, .tone-soft .step--cta .text-link, .tone-white .step--cta .text-link { color: var(--white); }
+
+/* Service cards: red */
+.service-card { background: var(--primary); color: var(--white); }
+.service-card p { color: rgba(255, 255, 255, 0.92); }
+.service-card .text-link { color: var(--white); }
+
+/* Blog: charcoal band, white cards */
+.blog { background: var(--dark); color: var(--white); }
+.blog .eyebrow { color: var(--white); opacity: 0.8; }
+.post { color: var(--ink); }
+
+/* Client/partner banner: charcoal so it stands apart from red service cards */
+.client-cta { background: var(--dark); border-left: 8px solid var(--primary); }
+.client-cta .btn:not(.btn--outline) { background: var(--primary); color: var(--white); }
+.client-cta .btn:not(.btn--outline):hover { background: var(--primary-dark); }

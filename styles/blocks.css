@@ -180,3 +180,7 @@
   .cta-banner { padding: 64px 20px; }
   .cta-banner h2 { font-size: 26px; }
 }
+
+/* Value cards: charcoal with a red top rule */
+.value, .tone-tint .value { background: var(--dark); color: var(--white); border-top: 4px solid var(--primary); }
+.value p, .tone-tint .value p { color: rgba(255, 255, 255, 0.85); }

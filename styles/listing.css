@@ -393,3 +393,8 @@ legend.filters__label { padding: 0; }
 .client-cta__actions { display: flex; flex-wrap: wrap; gap: 12px; flex: none; }
 .client-cta .btn--outline { background: transparent; color: var(--white); box-shadow: inset 0 0 0 2px var(--white); }
 .client-cta .btn--outline:hover { background: rgba(255, 255, 255, 0.15); }
+
+/* Brand pass overrides (loaded after globals.css) */
+.services .client-cta { background: var(--dark); border-left: 8px solid var(--primary); }
+.services .client-cta .btn:not(.btn--outline) { background: var(--primary); color: var(--white); }
+.services .client-cta .btn:not(.btn--outline):hover { background: var(--primary-dark); }
