@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/blocks/PageHeader";
 import { SplitSection } from "@/components/blocks/SplitSection";
 import { CtaBanner } from "@/components/blocks/CtaBanner";
-import { buildContent } from "@/lib/content";
+import { buildContent, images } from "@/lib/content";
 import { getMessages } from "@/lib/i18n/server";
 import { routes } from "@/lib/site";
 
@@ -17,6 +17,7 @@ export default async function ServicesPage() {
     <>
       <PageHeader
         {...page.header}
+        image={{ src: images.headerServices, alt: "" }}
         links={{
           heading: m.servicesPage.linksHeading,
           items: [

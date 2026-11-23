@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/blocks/PageHeader";
 import { Section } from "@/components/blocks/Section";
 import { ResourceBrowser } from "@/components/ResourceBrowser";
 import { getData, toArticleSummary } from "@/lib/data";
+import { images } from "@/lib/content";
 import { getMessages } from "@/lib/i18n/server";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -14,7 +15,7 @@ export default async function ResourcesPage() {
   const { eyebrow, title, lead } = m.resourcesPage;
   return (
     <>
-      <PageHeader eyebrow={eyebrow} title={title} lead={lead} tone="white" />
+      <PageHeader eyebrow={eyebrow} title={title} lead={lead} image={{ src: images.headerResources, alt: "" }} tone="white" />
       <Section tone="tint">
         <ResourceBrowser articles={articles.map(toArticleSummary)} categories={articleCategories} />
       </Section>

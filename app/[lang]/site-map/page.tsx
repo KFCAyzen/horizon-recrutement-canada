@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/blocks/PageHeader";
 import { Section } from "@/components/blocks/Section";
 import Link from "@/components/Link";
 import { getData } from "@/lib/data";
+import { images } from "@/lib/content";
 import { getMessages } from "@/lib/i18n/server";
 import { brand, routes } from "@/lib/site";
 
@@ -37,7 +38,7 @@ export default async function SiteMapPage() {
 
   return (
     <>
-      <PageHeader eyebrow={brand.name} title={t.title} tone="white" />
+      <PageHeader eyebrow={brand.name} title={t.title} image={{ src: images.headerSitemap, alt: "" }} tone="white" />
       <Section tone="soft">
         <div className="sitemap">
           {groups.map((g) => (

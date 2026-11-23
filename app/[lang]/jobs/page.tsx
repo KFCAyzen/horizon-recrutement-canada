@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/blocks/PageHeader";
 import { Section } from "@/components/blocks/Section";
 import { JobBrowser } from "@/components/jobs/JobBrowser";
 import { getData, toJobSummary } from "@/lib/data";
+import { images } from "@/lib/content";
 import { getMessages } from "@/lib/i18n/server";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -13,7 +14,7 @@ export default async function JobsPage() {
   const [{ jobs }, m] = await Promise.all([getData(), getMessages()]);
   return (
     <>
-      <PageHeader {...m.jobsPage} tone="white" />
+      <PageHeader {...m.jobsPage} image={{ src: images.headerJobs, alt: "" }} tone="white" />
       <Section tone="tint">
         <JobBrowser jobs={jobs.map(toJobSummary)} />
       </Section>

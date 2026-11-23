@@ -4,7 +4,7 @@ import { Section, SectionIntro } from "@/components/blocks/Section";
 import { NumberedCards } from "@/components/blocks/NumberedCards";
 import { SplitSection } from "@/components/blocks/SplitSection";
 import { ValueCards } from "@/components/blocks/ValueCards";
-import { buildContent } from "@/lib/content";
+import { buildContent, images } from "@/lib/content";
 import { getMessages } from "@/lib/i18n/server";
 import { routes } from "@/lib/site";
 
@@ -19,7 +19,7 @@ export default async function AboutPage() {
 
   return (
     <>
-      <PageHeader {...page.header} tone="white" />
+      <PageHeader {...page.header} image={{ src: images.headerAbout, alt: "" }} tone="white" />
 
       <Section>
         <SectionIntro eyebrow={advantage.eyebrow} title={advantage.title} lead={advantage.lead} cta={cta} />

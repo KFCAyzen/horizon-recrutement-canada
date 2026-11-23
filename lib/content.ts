@@ -10,6 +10,11 @@ import headerRecruitment from "@/assets/images/header-recruitment.jpg";
 import headerImmigration from "@/assets/images/header-immigration.jpg";
 import servicesRecruitment from "@/assets/images/services-recruitment.jpg";
 import servicesImmigration from "@/assets/images/services-immigration.jpg";
+import headerServices from "@/assets/images/header-services.jpg";
+import headerJobs from "@/assets/images/header-jobs.jpg";
+import headerAbout from "@/assets/images/header-about.jpg";
+import headerResources from "@/assets/images/header-resources.jpg";
+import headerSitemap from "@/assets/images/header-sitemap.jpg";
 import aboutApproach from "@/assets/images/about-approach.jpg";
 
 export type ImageSrc = StaticImageData | string;
@@ -18,6 +23,11 @@ export const images = {
   hero: heroMontreal,
   headerRecruitment,
   headerImmigration,
+  headerServices,
+  headerJobs,
+  headerAbout,
+  headerResources,
+  headerSitemap,
   servicesRecruitment,
   servicesImmigration,
   aboutApproach,
