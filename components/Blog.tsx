@@ -3,6 +3,7 @@ import type { ArticleSummary } from "@/lib/data";
 import { routes } from "@/lib/site";
 import { getMessages } from "@/lib/i18n/server";
 import Link from "./Link";
+import servicesRecruitment from "@/assets/images/services-recruitment.jpg";
 
 /** Homepage teaser: photo + title cards. */
 export async function Blog({ posts }: { posts: ArticleSummary[] }) {
@@ -32,6 +33,17 @@ export async function Blog({ posts }: { posts: ArticleSummary[] }) {
               <span className="post__title">{post.title}</span>
             </Link>
           ))}
+          <Link href={routes.recruitment} className="post">
+            <div className="post__media">
+              <Image
+                src={servicesRecruitment}
+                alt=""
+                fill
+                sizes="(max-width: 600px) 100vw, (max-width: 991px) 50vw, 280px"
+              />
+            </div>
+            <span className="post__title">{t.cameroonCard}</span>
+          </Link>
         </div>
       </div>
     </section>
