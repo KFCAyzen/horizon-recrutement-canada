@@ -72,6 +72,56 @@ export const fr: Messages = {
     employers: "Employeurs | Découvrir nos services",
   },
 
+  landing: {
+    "tagline": "Connecter les talents, bâtir un avenir sans frontières",
+    "audience": {
+      "eyebrow": "Comment pouvons-nous vous aider?",
+      "title": "Choisissez votre parcours",
+      "cards": [
+        {
+          "tag": "Chercheurs d'emploi",
+          "title": "Je suis candidat",
+          "body": "Consultez les postes ouverts chez des employeurs canadiens et soyez accompagné dans votre immigration.",
+          "cta": "Voir les emplois"
+        },
+        {
+          "tag": "Employeurs",
+          "title": "Je suis employeur",
+          "body": "Embauchez des talents internationaux qualifiés avec une équipe qui gère à la fois le recrutement et l'immigration.",
+          "cta": "Devenir client"
+        },
+        {
+          "tag": "Organisations",
+          "title": "Je représente une organisation",
+          "body": "Agence, cabinet ou établissement? Explorons ensemble comment collaborer.",
+          "cta": "Devenir partenaire"
+        }
+      ]
+    },
+    "pillars": {
+      "eyebrow": "Pourquoi Horizon",
+      "title": "Recrutement et immigration, sous un même toit",
+      "items": [
+        {
+          "title": "Double expertise",
+          "body": "Nous réunissons l'expertise en recrutement international et en immigration pour accompagner les employeurs et les travailleurs à chaque étape."
+        },
+        {
+          "title": "Approche personnalisée",
+          "body": "Chaque mandat est unique. Nous adaptons notre accompagnement aux besoins de chaque entreprise et de chaque projet."
+        },
+        {
+          "title": "Processus rigoureux",
+          "body": "Un suivi structuré, de la première recherche jusqu'à la finalisation des démarches d'immigration."
+        },
+        {
+          "title": "Résultats éprouvés",
+          "body": "Nos résultats parlent d'eux-mêmes : nous avons aidé de nombreuses entreprises à trouver les talents dont elles ont besoin."
+        }
+      ]
+    }
+  },
+
   home: {
     stats: {
       candidates: "Candidats internationaux recrutés",

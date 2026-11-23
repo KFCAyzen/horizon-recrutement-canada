@@ -72,6 +72,56 @@ export const en = {
     employers: "Employers | Learn About Our Services",
   },
 
+  landing: {
+    "tagline": "Connecting talent, building a future without borders",
+    "audience": {
+      "eyebrow": "How can we help?",
+      "title": "Choose your path",
+      "cards": [
+        {
+          "tag": "Job seekers",
+          "title": "I am a candidate",
+          "body": "Browse open positions with Canadian employers and get guided through your immigration.",
+          "cta": "See open jobs"
+        },
+        {
+          "tag": "Employers",
+          "title": "I am an employer",
+          "body": "Hire qualified international talent with a team that handles both recruitment and immigration.",
+          "cta": "Become a client"
+        },
+        {
+          "tag": "Organizations",
+          "title": "I represent an organization",
+          "body": "Agency, firm or institution? Let us explore how we can work together.",
+          "cta": "Become a partner"
+        }
+      ]
+    },
+    "pillars": {
+      "eyebrow": "Why Horizon",
+      "title": "Recruitment and immigration, under one roof",
+      "items": [
+        {
+          "title": "Dual expertise",
+          "body": "We combine international recruitment and immigration know-how to support employers and workers at every step."
+        },
+        {
+          "title": "Tailored approach",
+          "body": "Every mandate is unique. We adapt our support to the needs of each company and each project."
+        },
+        {
+          "title": "Rigorous process",
+          "body": "Structured follow-up from the first search to the completion of immigration procedures."
+        },
+        {
+          "title": "Proven results",
+          "body": "Our results speak for themselves: we have helped many companies find the talent they need."
+        }
+      ]
+    }
+  },
+
   home: {
     stats: {
       candidates: "International candidates recruited",

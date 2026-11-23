@@ -1,4 +1,7 @@
 import { Hero } from "@/components/Hero";
+import { Audience } from "@/components/Audience";
+import { StatsBand } from "@/components/StatsBand";
+import { Pillars } from "@/components/Pillars";
 import { About } from "@/components/About";
 import { Process } from "@/components/Process";
 import { Services } from "@/components/Services";
@@ -10,8 +13,11 @@ export default async function Home() {
   return (
     <>
       <Hero />
-      <About openPositions={jobs.length} />
+      <Audience />
+      <About />
+      <StatsBand openPositions={jobs.length} />
       <Process />
+      <Pillars />
       <Services />
       <Blog posts={articles.slice(0, 3).map(toArticleSummary)} />
     </>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { ImageSrc } from "@/lib/content";
+import { images, type ImageSrc } from "@/lib/content";
 import { Arrow } from "../Arrow";
 import Link from "../Link";
 import { ButtonLink } from "../ButtonLink";
@@ -18,10 +18,23 @@ type Props = {
 };
 
 export function PageHeader({ eyebrow, title, lead, cta, tone = "tint", image, links }: Props) {
-  const hasAside = Boolean(image || links);
+  const hasAside = Boolean(links);
+  // Full-bleed background photo: the page's own image, or the site hero photo.
+  const bg = image ?? { src: images.hero as ImageSrc, alt: "" };
 
   return (
     <header className={`page-header tone-${tone}`}>
+      <Image
+        src={bg.src}
+        alt={bg.alt}
+        fill
+        loading="eager"
+        fetchPriority="high"
+        quality={60}
+        placeholder={typeof bg.src === "string" ? "empty" : "blur"}
+        sizes="100vw"
+        className="page-header__bg"
+      />
       <div className="container">
         <div className={`page-header__grid${hasAside ? "" : " page-header__grid--single"}`}>
           <div>
@@ -30,20 +43,6 @@ export function PageHeader({ eyebrow, title, lead, cta, tone = "tint", image, li
             {lead && <p className="lead">{lead}</p>}
             {cta && <ButtonLink href={cta.href}>{cta.label}</ButtonLink>}
           </div>
-
-          {image && (
-            <div className="page-header__media">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                loading="eager"
-                fetchPriority="high"
-                placeholder={typeof image.src === "string" ? "empty" : "blur"}
-                sizes="(max-width: 991px) calc(100vw - 64px), 520px"
-              />
-            </div>
-          )}
 
           {links && (
             <nav className="page-header__links" aria-label={links.heading}>

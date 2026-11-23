@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Montserrat } from "next/font/google";
 import { Suspense } from "react";
 import { ActiveNav, Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -9,6 +10,9 @@ import "../globals.css";
 import "@/styles/blocks.css";
 import "@/styles/listing.css";
 import "@/styles/prose.css";
+import "@/styles/redesign.css";
+
+const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-brand", display: "swap" });
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -22,8 +26,6 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-// The original site uses the system-ui font stack (see --font in globals.css),
-// so no next/font import is needed.
 export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   const lang = await getLang();
   const m = await getMessages();
@@ -41,7 +43,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   };
 
   return (
-    <html lang={lang}>
+    <html lang={lang} className={montserrat.variable}>
       <body>
         <I18nProvider lang={lang} m={clientMessages}>
           {/* usePathname can suspend for params unknown at build time (e.g. 404 slugs). */}

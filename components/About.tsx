@@ -1,12 +1,10 @@
-import { buildContent } from "@/lib/content";
 import { getMessages } from "@/lib/i18n/server";
 import { routes } from "@/lib/site";
 import { ButtonLink } from "./ButtonLink";
 
-export async function About({ openPositions }: { openPositions: number }) {
+export async function About() {
   const m = await getMessages();
   const t = m.home.about;
-  const stats = buildContent(m).home.stats.map((s) => (s.key === "positions" ? { ...s, value: String(openPositions) } : s));
 
   return (
     <section className="about">
@@ -23,14 +21,6 @@ export async function About({ openPositions }: { openPositions: number }) {
         </div>
 
         <div className="about__bottom">
-          <div className="stats">
-            {stats.map((s) => (
-              <div className="stat" key={s.label}>
-                <strong>{s.value}</strong>
-                <span>{s.label}</span>
-              </div>
-            ))}
-          </div>
           <ButtonLink href={routes.about} variant="text">
             {t.cta}
           </ButtonLink>
